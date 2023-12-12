@@ -1,4 +1,4 @@
-// make a function which take a number and ,
+// 1. make a function which take a number and ,
 // - if number is even then it will ptint "number is even",
 // - if odd the it will print "number is odd" and
 // - if i pass 0 it will print "number is ZERO"
@@ -18,8 +18,13 @@ if (num === 0) {
 
 // =================================================================================================
 
-//  make a function which, if i give a array with odd and even number it will remove all odd number and return a array with evnet number.
+// 2. make a function which, if i give a array with odd and even number it will remove all odd number and return a array with evnet number.
 //  node - return array must be in accending order
+
+// if i give [ 1,2,4,78,2,6] need [2,2,4,6,78]
+// - [2,4,78,2,6] => ans is wrong
+// - [1,2,2,78,6] => ans is wrong
+// - [2,2,4,6,78] => correct ans
 
 /*
 let inputarr = [1, 2, 77, 78, 9, 8, 12];
@@ -41,7 +46,7 @@ console.log("Ans arr:", ansarr);
 
 // =============================================================================================
 
-// Made a function which a count how many time user given carector is repeting in string.
+//4. Made a function which a count how many time user given carector is repeting in string.
 /*
 function countCharacter(inputStr, charToCount) {
     let count = 0;
@@ -72,7 +77,7 @@ console.log(countCharacter(inputStr, charToCount3));
 
 // =================================================================================================
 
-//  make a function who reverce a string (by use of for-loop)
+// 5. make a function who reverce a string (by use of for-loop)
 /*
 function reverseStr(inputStr) {
     let reversedString = '';
@@ -92,7 +97,7 @@ console.log(reversed);
 
 //====================================================================================================
 
-//make a function who reverce a string by word
+// 6.make a function who reverce a string by word
 
 /*
 function reverseword(inputString) {
@@ -114,7 +119,7 @@ console.log(reversed);
 
 // =============================================================================================
 
-//
+//7. make a function who reverce a string by wordand also need to reverce each word
 /*
 function reversecharacters(inputString) {
     let wordsarr = inputString.split(' ');
@@ -141,9 +146,10 @@ console.log(reversed);
 
 */
 
+
 // =================================================================================================
 
-//  Make a function who return a sum of all array(simple array) element
+// 8. Make a function who return a sum of all array(simple array) element
 
 /*
 function sumarr(arr) {
@@ -157,6 +163,76 @@ console.log(sumarr(arr1));
 console.log(sumarr(arr2));
 
 */
+
+// =================================================================================================
+
+// 9. Find some Data from below given array of object
+/*
+let marksheet = [
+    {
+        subject: "Gujarati", marks: 60
+    },
+    {
+        subject: "Maths",
+        marks: 40
+    },
+    {
+        subject: "Science",
+        marks: 50
+    },
+    {
+        subject: "Hindi",
+        marks: 70
+    },
+    {
+        subject: "English",
+        marks: 30
+    },
+]
+
+function calculatemark(marksheet) {
+    let totalMarks = 0;
+
+    for (let i = 0; i < marksheet.length; i++) {
+        totalMarks += marksheet[i].marks;
+    }
+
+    return totalMarks;
+}
+
+const totalMarks = calculatemark(marksheet);
+console.log("Total Marks:", totalMarks);
+
+*/
+
+
+// ================================================
+
+// 2. Make a function to find percentage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // =================================================================================================
 
