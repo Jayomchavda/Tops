@@ -56,7 +56,7 @@ myobj.printAge();
 
 // ======================================================
 
-//
+//  get all key
 /*
 function createobj(name, age, vehicles) {
     return {
