@@ -207,32 +207,234 @@ console.log("Total Marks:", totalMarks);
 
 
 // ================================================
+// Make a function to find total sum of all subject.
+/*
+let marksheet = [
+    { subject: "Gujarati", marks: 60 },
+    { subject: "Maths", marks: 40 },
+    { subject: "Science", marks: 50 },
+    { subject: "Hindi", marks: 70 },
+    { subject: "English", marks: 30 }
+];
+
+function calculateTotalMarks(marksheet) {
+    let totalMarks = 0;
+
+    for (let i = 0; i < marksheet.length; i++) {
+        totalMarks += marksheet[i].marks;
+    }
+
+    return totalMarks;
+}
+
+let totalMarks = calculateTotalMarks(marksheet);
+
+console.log("Total Marks in all subjects:", totalMarks);
+
+*/
+
+// ================================================
+
 
 // 2. Make a function to find percentage.
 
+/*
+let marksheet = [
+    {
+        subject: "Gujarati", marks: 60
+    },
+    {
+        subject: "Maths",
+        marks: 40
+    },
+    {
+        subject: "Science",
+        marks: 50
+    },
+    {
+        subject: "Hindi",
+        marks: 70
+    },
+    {
+        subject: "English",
+        marks: 30
+    },
+]
+
+function calculatemark(marksheet) {
+    let totalMarks = 0;
+
+    for (let i = 0; i < marksheet.length; i++) {
+        totalMarks += marksheet[i].marks;
+    }
+
+    return totalMarks;
+}
+
+const totalMarks = calculatemark(marksheet);
+console.log("Total Marks:", totalMarks);
 
 
+function calculatePer(marksheet) {
+    const totalmark = 100;
+
+    const totalMarksObtained = marksheet.reduce((total, subject) => total + subject.marks, 0);
+
+    const totalMarks = marksheet.length * totalmark;
+
+    const percentage = (totalMarksObtained / totalMarks) * 100;
+
+    return percentage;
+}
+
+const percentage = calculatePer(marksheet);
+console.log(`The percentage is: ${percentage}%`);
+
+*/
+
+// ======================================================================
+
+//3. Make a function to find User is pass or not (if Percentage is less then 36 he/she is fails other wise pass)
+
+/*
+let marksheet = [
+    {
+        subject: "Gujarati", marks: 60
+    },
+    {
+        subject: "Maths",
+        marks: 40
+    },
+    {
+        subject: "Science",
+        marks: 50
+    },
+    {
+        subject: "Hindi",
+        marks: 70
+    },
+    {
+        subject: "English",
+        marks: 30
+    },
+]
+
+function pass(marksheet) {
+    let totalMarks = 0;
+    let totalSubjects = marksheet.length;
+
+    for (let i = 0; i < totalSubjects; i++) {
+        totalMarks += marksheet[i].marks;
+    }
+
+    let percentage = (totalMarks / (totalSubjects * 100)) * 100;
+
+    if (percentage >= 36) {
+        return "Pass";
+    } else {
+        return "Fail";
+    }
+}
+
+let result = pass(marksheet);
+console.log(`Result: ${result}`);
+
+*/
 
 
+// =================================================================
 
+// 4. Make a function which will print a centence for each subject
 
+/*
+let marksheet = [
+    {
+        subject: "Gujarati", marks: 60
+    },
+    {
+        subject: "Maths",
+        marks: 40
+    },
+    {
+        subject: "Science",
+        marks: 50
+    },
+    {
+        subject: "Hindi",
+        marks: 70
+    },
+    {
+        subject: "English",
+        marks: 30
+    },
+]
 
+function printsub(marksheet) {
+    marksheet.forEach(subject => {
+        console.log(`In ${subject.subject}, the student scored ${subject.marks} marks.`);
+    });
+}
 
+printsub(marksheet);
 
+*/
 
+// =================================================================
 
+// 5. make a function who is return a subject name which have highest and lowest number
+// Note : return a object like { lowentMarsk : "Englis", higestMarks :"Hindi" }
 
+/*
+let marksheet = [
+    {
+        subject: "Gujarati", marks: 60
+    },
+    {
+        subject: "Maths",
+        marks: 40
+    },
+    {
+        subject: "Science",
+        marks: 50
+    },
+    {
+        subject: "Hindi",
+        marks: 70
+    },
+    {
+        subject: "English",
+        marks: 30
+    },
+]
 
+function lowestmarks(marksheet) {
+    if (marksheet.length === 0) {
+        return { lowestMarks: null, highestMarks: null };
+    }
 
+    let lowestMarks = marksheet[0];
+    let highestMarks = marksheet[0];
 
+    marksheet.forEach(subject => {
+        if (subject.marks < lowestMarks.marks) {
+            lowestMarks = subject;
+        }
 
+        if (subject.marks > highestMarks.marks) {
+            highestMarks = subject;
+        }
+    });
 
+    return {
+        lowestMarks: lowestMarks.subject,
+        highestMarks: highestMarks.subject
+    };
+}
 
+const result = lowestmarks(marksheet);
+console.log(result);
 
-
-
-
-
+*/
 
 // =================================================================================================
 

@@ -135,10 +135,48 @@ console.log("All values:", allValues);
 // =================================================================
 
 // add one key for city name and store your city name on it  (from outside)
+/*
+let cityData = {};
 
+cityData.cityName = 'Upleta';
 
+console.log("City Name:", cityData.cityName);
 
+*/
 
+// =================================================================
+
+//  delete age key from object
+/*
+let person = {
+    name: 'jayom',
+    age: 20,
+    city: 'upleta'
+};
+
+console.log("Before deletion:", person);
+
+delete person.age;
+
+console.log("After deletion:", person);
+
+*/
+
+// =================================================================
+
+//  make one function name addAge who print age with add some year which one pass by user
+
+/*
+function addAge(currentAge, yearsToAdd) {
+    const newAge = currentAge + yearsToAdd;
+
+    console.log(`Current Age: ${currentAge}`);
+    console.log(`Age After Adding ${yearsToAdd} Years: ${newAge}`);
+}
+
+addAge(25, 5);
+
+*/
 
 
 
