@@ -8,6 +8,8 @@ import FunctionalCom from './2.functional/FunctionalCom.jsx';
 import Home from './3.Style/Home.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home2 from './4.TaskDesign/Home2.jsx';
+import Funstate from './5.State/Functional/Funstate.jsx';
+import State from './5.State/State.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -22,7 +24,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     {/* <Home /> */}
 
-    <Home2 />
+    {/* =====================  4.TaskDesign  ==================== */}
+
+    {/* <Home2 /> */}
+
+    {/* =====================  5.State  ==================== */}
+
+    <State />
 
 
 
