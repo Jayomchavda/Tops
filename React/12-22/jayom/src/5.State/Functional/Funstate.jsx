@@ -16,11 +16,11 @@ export default function Funstate() {
     }
 
     const incamount = () => {
-        setdata({ amount: data.amount + 1 });
+        setdata({ ...data, amount: data.amount + 1 });
     }
 
     const incPoint = () => {
-        setdata({ point: data.point + 1 });
+        setdata({ ...data, point: data.point + 1 });
     }
     return (
         <div className='text-center '>
