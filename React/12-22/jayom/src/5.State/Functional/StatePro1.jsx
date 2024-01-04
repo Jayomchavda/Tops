@@ -10,16 +10,24 @@ export default function StatePro1() {
     let [index, setIndex] = useState(0);
     let [colorIndex, setColorIndex] = useState(0);
 
+    //change names of states
     const cngname = () => {
-        if (index < color.length - 1) {
+
+
+        if (index < name.length - 1) {
             setIndex(index + 1);
         }
         else {
-            alert("Finished Name...!");
-            setIndex(0);
+            if (confirm("Confirm!")) {
+                setIndex(0);
+            }
+            else {
+                setIndex(index + 1);
+            }
         }
     }
 
+    // change color index
     const cngcolor = () => {
         if (colorIndex < color.length - 1) {
             setColorIndex(colorIndex + 1);
@@ -32,7 +40,7 @@ export default function StatePro1() {
 
     return (
         <div className='d-flex align-items-center flex-column  text-center '>
-            <h1>{name[index]}</h1>
+            <h1>{index}{name[index]}</h1>
             <Button color='danger' onClick={cngname}>Change</Button>
 
             <hr />

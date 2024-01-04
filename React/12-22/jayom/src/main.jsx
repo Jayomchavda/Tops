@@ -11,6 +11,8 @@ import Home2 from './4.TaskDesign/Home2.jsx';
 import Funstate from './5.State/Functional/Funstate.jsx';
 import State from './5.State/State.jsx';
 import StatePro1 from './5.State/Functional/StatePro1.jsx';
+import Props from './6.Props/Functional/props.jsx';
+import ClassProps from './6.Props/Functional/Class/ClassProps.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -31,9 +33,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     {/* =====================  5.State  ==================== */}
 
-    <State />
+    {/* <State /> */}
 
+    {/* =====================  6.Props  ==================== */}
 
+    <Props />
+    {/* <ClassProps /> */}
 
 
 
