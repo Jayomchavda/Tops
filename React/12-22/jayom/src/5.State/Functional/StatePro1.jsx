@@ -43,7 +43,6 @@ export default function StatePro1() {
 
             <hr />
             <Button color='danger' onClick={cngColor}>Change Color</Button>
-
         </div >
     )
 }

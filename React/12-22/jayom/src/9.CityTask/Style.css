@@ -1,0 +1,14 @@
+.citycontain {
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    min-width: 100px;
+    width: 95vw;
+    min-height: 80px;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    min-height: 100vw;
+    flex-wrap: wrap;
+    gap: 50px;
+}
