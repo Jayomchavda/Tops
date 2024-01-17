@@ -2,21 +2,25 @@ import React from 'react'
 // import ReactDOM from 'react-dom/client'
 import './index.css'
 
-// import ClassCom from './1.Component/class/ClassCom.jsx';
-// import FunctionalCom from './2.functional/FunctionalCom.jsx';
-// import ClassCom2 from './1.Component/ClassCom2.jsx';
-// import Home from './3.Style/Home.jsx';
-// import Home2 from './4.TaskDesign/Home2.jsx';
-// import State from './5.State/State.jsx';
+import ClassCom from './1.Component/class/ClassCom.jsx';
+import FunctionalCom from './2.functional/FunctionalCom.jsx';
+import ClassCom2 from './1.Component/ClassCom2.jsx';
+import Home from './3.Style/Home.jsx';
+import Home2 from './4.TaskDesign/Home2.jsx';
+import State from './5.State/State.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Props from './6.Props/Functional/props.jsx';
-// import MapKey from './7.Mapkey/MapKey.jsx';
-// import Home from './9.CityJsonTask/Home.jsx';
+import Props from './6.Props/Functional/props.jsx';
+import MapKey from './7.Mapkey/MapKey.jsx';
+import Home from './9.CityJsonTask/Home.jsx';
 import HomePage from './8.JsonTask/HomePage.jsx';
 
 
 import City from './9.CityTask/City.jsx';
-// import Header from './8.JsonTask/Header.jsx';
+import { ToastContainer } from 'react-toastify';
+import UnMount from './10.Unmount/UnMount.jsx';
+import MainTask from './11.ConditionalRender/MainTask.jsx';
+import Header from './8.JsonTask/Header.jsx';
+
 
 
 export default function App() {
@@ -55,10 +59,29 @@ export default function App() {
 
       {/* =====================  9. City Json task ==================== */}
 
-      <City />
+      {/* <City /> */}
 
-      {/* =====================  10.  ==================== */}
+      {/* =====================  10. Unmount ==================== */}
 
+      {/* <UnMount /> */}
+
+      {/* =====================  11. Conditional render  ==================== */}
+
+      <MainTask />
+
+      {/* =====================  12.   ==================== */}
+
+
+
+
+
+
+
+
+
+
+
+      {/* <ToastContainer /> */}
     </div >
   )
 }

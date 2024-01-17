@@ -7,7 +7,7 @@ export default function City() {
         <div>
 
             <CityContent />
-            <CityCard />
+            {/* <CityCard /> */}
         </div>
     )
 }
