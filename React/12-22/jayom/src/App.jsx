@@ -11,7 +11,6 @@ import State from './5.State/State.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Props from './6.Props/Functional/props.jsx';
 import MapKey from './7.Mapkey/MapKey.jsx';
-import Home from './9.CityJsonTask/Home.jsx';
 import HomePage from './8.JsonTask/HomePage.jsx';
 
 
@@ -20,6 +19,7 @@ import { ToastContainer } from 'react-toastify';
 import UnMount from './10.Unmount/UnMount.jsx';
 import MainTask from './11.ConditionalRender/MainTask.jsx';
 import Header from './8.JsonTask/Header.jsx';
+import InputMain from './12.Input/InputMain.jsx';
 
 
 
@@ -67,9 +67,11 @@ export default function App() {
 
       {/* =====================  11. Conditional render  ==================== */}
 
-      <MainTask />
+      {/* <MainTask /> */}
 
-      {/* =====================  12.   ==================== */}
+      {/* =====================  12. Input  ==================== */}
+
+      <InputMain />
 
 
 
