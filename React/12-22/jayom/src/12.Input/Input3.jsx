@@ -47,8 +47,6 @@ export default function Input3() {
         setnameArr(newArr);
         setname("");
         setUpdateMode(false);
-
-
     }
 
 
@@ -64,8 +62,6 @@ export default function Input3() {
                 {
                     updateMode ? <Button onClick={() => updateHandler()} className='w-100 mt-1 '>Update</Button> : <Button onClick={() => addData()} color='danger' className='w-100 mt-3 ' >Add</Button>
                 }
-
-
             </div>
 
             <div>
