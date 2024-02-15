@@ -20,6 +20,7 @@ import UnMount from './10.Unmount/UnMount.jsx';
 import MainTask from './11.ConditionalRender/MainTask.jsx';
 import Header from './8.JsonTask/Header.jsx';
 import InputMain from './12.Input/InputMain.jsx';
+import SimpleRouter from './13.Router/SimpleRouter/SimpleRouter.jsx';
 
 
 
@@ -71,8 +72,11 @@ export default function App() {
 
       {/* =====================  12. Input  ==================== */}
 
-      <InputMain />
+      {/* <InputMain /> */}
 
+      {/* =====================  13. Router  ==================== */}
+
+      <SimpleRouter />
 
 
 
