@@ -21,6 +21,7 @@ import MainTask from './11.ConditionalRender/MainTask.jsx';
 import Header from './8.JsonTask/Header.jsx';
 import InputMain from './12.Input/InputMain.jsx';
 import SimpleRouter from './13.Router/SimpleRouter/SimpleRouter.jsx';
+import Main from './13.Router/Task1/Main.jsx';
 
 
 
@@ -76,7 +77,8 @@ export default function App() {
 
       {/* =====================  13. Router  ==================== */}
 
-      <SimpleRouter />
+      {/* <SimpleRouter /> */}
+      <Main />
 
 
 
