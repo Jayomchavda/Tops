@@ -1,3 +1,4 @@
+import { Edit, Trash } from 'lucide-react'
 import React, { useState } from 'react'
 import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 
@@ -7,10 +8,13 @@ export default function UserCrud() {
         email: "",
         password: "",
         gender: "",
+        hobby: [],
     })
 
     let [userArr, setUserArr] = useState([])
-    let [gender, setGender] = useState("")
+    // let [gender, setGender] = useState("")
+    let [index, setIndex] = useState("")
+    let [upadtemode, setUpdatemode] = useState("false")
 
 
     const submitHandler = (e) => {
@@ -27,11 +31,50 @@ export default function UserCrud() {
             email: "",
             password: "",
             gender: "",
+            hobby: [],
         })
-
-
-
     }
+
+    const checkHandler = (hby, e) => {
+        if (e.target.checked) {
+            setUser({ ...user, hobby: [...user.hobby, hby] })
+        } else {
+            let filterData = user.hobby.filter((e) => e !== hby)
+            setUser({ ...user, hobby: filterData })
+        }
+    };
+
+    const deleteHandler = (index) => {
+        let filterData = userArr.filter((e, i) => i !== index)
+        setUserArr(filterData)
+    }
+
+    const editHandler = (data, index) => {
+        setUser(data);
+        setIndex(index)
+        setUpdatemode(false)
+    }
+
+    const updateHandler = () => {
+        let newData = userArr.map((e, i) => {
+            if (i === index) {
+                return user
+            } else {
+                return e
+            }
+        })
+        setUserArr(newData);
+        setUser({
+            name: "",
+            email: "",
+            password: "",
+            gender: "",
+            hobby: [],
+        })
+        setUpdatemode(true);
+    }
+
+
     return (
         <div>
             <Form className='mt-5'>
@@ -110,16 +153,43 @@ export default function UserCrud() {
                 {/* ===========     checkbox     ============== */}
 
                 <FormGroup className='d-flex justify-content-md-start' >
-                    <Input type="checkbox" />
-                    <Label check>
+                    <Input checked={user.hobby.includes("cricket")}
+                        onChange={(e) => checkHandler("cricket", e)}
+                        type="checkbox" />
+                    <Label >
                         Cricket
+                    </Label>
+                </FormGroup>
+
+                <FormGroup className='d-flex justify-content-md-start' >
+                    <Input checked={user.hobby.includes("chess")}
+                        onChange={(e) => checkHandler("chess", e)}
+                        type="checkbox" />
+                    <Label >
+                        Chess
+                    </Label>
+                </FormGroup>
+
+                <FormGroup className='d-flex justify-content-md-start' >
+                    <Input checked={user.hobby.includes("hockey")}
+                        onChange={(e) => checkHandler("hockey", e)}
+                        type="checkbox" />
+                    <Label >
+                        Hockey
                     </Label>
                 </FormGroup>
             </Form>
 
-            <Button onClick={(e) => submitHandler(e)} color='danger' className='w-25'>
-                Submit
-            </Button>
+            {
+                upadtemode ? <Button onClick={(e) => submitHandler(e)} color='danger' className='w-25'>
+                    Submit
+                </Button> : <Button onClick={(e) => updateHandler(e)} color='danger' className='w-25'>
+                    Update
+                </Button>
+
+            }
+
+
 
 
             <Table className='mt-5'
@@ -167,8 +237,16 @@ export default function UserCrud() {
                                         {e?.gender}
                                     </td>
                                     <td>
-                                        {e?.hobby}
+                                        {e?.hobby.map((hby) => {
+                                            return (
+                                                <div className='"d-flex gap-2 align-items-center"'>
+                                                    <li className="list-unstyled">{hby}</li>
+                                                </div>
+                                            )
+                                        })}
                                     </td>
+                                    <Edit onClick={() => editHandler(e, i)} color='gray' size={40} />
+                                    <Trash onClick={() => deleteHandler(i)} role='button' color='red' size={40} />
                                 </tr>
                             )
                         })
