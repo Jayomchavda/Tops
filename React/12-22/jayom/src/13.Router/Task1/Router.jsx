@@ -10,6 +10,8 @@ import Gogals from './Fashion/Gogals'
 import Shoes from './Fashion/Shoes'
 import UserCrud from './UserCrud'
 import Header from './Fashion/Header'
+import Product from './Product'
+import Singleproduct from './Singleproduct'
 
 export default function Router() {
     return (
@@ -38,7 +40,6 @@ export default function Router() {
 
         <div className='header1'>
             <BrowserRouter>
-
                 <Header />
 
                 <div className='align-content-center text-center   '>
@@ -46,6 +47,8 @@ export default function Router() {
                         <Route path='/home' element={<Home />} />
                         <Route path='/about' element={<About />} />
                         <Route path="/user" element={<UserCrud />} />
+                        <Route path="/product" element={<Product />} />
+                        <Route path="/product/:id" element={<Singleproduct />} />
 
                         {/* =================nested router ================ */}
                         <Route path='/fashion'  >

@@ -23,7 +23,6 @@ export default function UserCrud() {
             alert("Please enter youe Email ID and Password")
         } else {
             setUserArr([...userArr, user])
-
         }
 
         setUser({
