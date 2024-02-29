@@ -10,7 +10,8 @@ export default function Header() {
             <NavLink to={"about"}>ABOUT</NavLink>
             <NavLink to={"fashion"}>FASHION</NavLink>
             <NavLink to={"product"}>PRODUCT</NavLink>
-            <NavLink to={"user"}>USER</NavLink>
+            <NavLink to={"users"}>USERS</NavLink>
+            <NavLink to={"user"}>LOGIN</NavLink>
         </div></div>
     )
 }

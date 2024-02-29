@@ -12,6 +12,8 @@ import UserCrud from './UserCrud'
 import Header from './Fashion/Header'
 import Product from './Product'
 import Singleproduct from './Singleproduct'
+import Users from './Fashion/Users'
+import SingleUsers from './SingleUsers'
 
 export default function Router() {
     return (
@@ -49,6 +51,10 @@ export default function Router() {
                         <Route path="/user" element={<UserCrud />} />
                         <Route path="/product" element={<Product />} />
                         <Route path="/product/:id" element={<Singleproduct />} />
+                        <Route path="/users" element={<Users />} />
+                        <Route path="/singleusers/:id" element={<SingleUsers />} />
+
+
 
                         {/* =================nested router ================ */}
                         <Route path='/fashion'  >
