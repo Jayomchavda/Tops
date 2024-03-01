@@ -110,7 +110,6 @@ export default function Users() {
                                     <td>
                                         <Eye role='button' onClick={() => navigate(`/singleusers/${e.id}`)} />
                                     </td>
-
                                 </tr>
                             )
                         })

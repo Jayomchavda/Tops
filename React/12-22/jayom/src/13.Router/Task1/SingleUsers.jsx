@@ -5,7 +5,7 @@ import { Table } from 'reactstrap';
 
 export default function SingleUsers() {
 
-    let [data, setData] = useState([])
+    let [data, setData] = useState({})
     let { id } = useParams();
 
 
@@ -13,7 +13,7 @@ export default function SingleUsers() {
     useEffect(() => {
         axios({
             method: "get",
-            url: "https://fakestoreapi.com/users/1"
+            url: `https://fakestoreapi.com/users/${id}`
         })
             .then((res) => {
                 console.log("===res===>", res.data)
@@ -22,11 +22,16 @@ export default function SingleUsers() {
             .catch((err) => {
                 console.log("===err===>", err)
             })
-    })
+    }, [])
     return (
         <div>
             <Table className='mt-3  ' style={{ backgroundColor: "ButtonHighlight" }}
             >
+                <tr>
+                    <th>
+                        ID : {data?.id}
+                    </th>
+                </tr>
                 <tr>
                     <th>
                         Email : {data?.email}

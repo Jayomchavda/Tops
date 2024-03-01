@@ -52,18 +52,7 @@ export default function Singleproduct() {
                             Description : {data.description}
                         </th>
                     </tr>
-
-
                 </table>
-
-
-
-
-
-
-
-
-
             </div >
         </>
     )
