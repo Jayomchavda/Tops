@@ -32,7 +32,7 @@ export default function Users() {
                             Sr.no
                         </th>
                         <th>
-                            Email
+                            Email ID
                         </th>
                         <th>
                             User Name
@@ -59,7 +59,7 @@ export default function Users() {
                             Zip code
                         </th>
                         <th>
-                            Phone
+                            Phone No.
                         </th>
                         <th>
                             Action
