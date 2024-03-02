@@ -17,7 +17,7 @@ import SingleUsers from './SingleUsers'
 
 export default function Router() {
     return (
-        <div className='header1'>
+        <div style={{ borderRadius: "50px", backgroundColor: "#bed9f1" }} className='header1 '>
             <BrowserRouter>
                 <Header />
 
