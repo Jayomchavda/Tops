@@ -1,5 +1,5 @@
 import { Edit, Trash } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 
 export default function UserCrud() {
@@ -12,9 +12,19 @@ export default function UserCrud() {
     })
 
     let [userArr, setUserArr] = useState([])
-    // let [gender, setGender] = useState("")
     let [index, setIndex] = useState("")
     let [upadtemode, setUpdatemode] = useState("false")
+
+    useEffect(() => {
+        const storedUsers = JSON.parse(localStorage.getItem("user"));
+        if (storedUsers) {
+            setUserArr(storedUsers);
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("user", JSON.stringify(userArr));
+    }, [userArr])
 
 
     const submitHandler = (e) => {
