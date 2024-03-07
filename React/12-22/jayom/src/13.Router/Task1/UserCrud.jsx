@@ -17,14 +17,15 @@ export default function UserCrud() {
 
     useEffect(() => {
         const storedUsers = JSON.parse(localStorage.getItem("user"));
+        console.log("storedUsers", storedUsers)
         if (storedUsers) {
             setUserArr(storedUsers);
         }
     }, [])
 
-    useEffect(() => {
-        localStorage.setItem("user", JSON.stringify(userArr));
-    }, [userArr])
+    // useEffect(() => {
+    //     localStorage.setItem("user", JSON.stringify(userArr));
+    // }, [userArr])
 
 
     const submitHandler = (e) => {
@@ -33,6 +34,7 @@ export default function UserCrud() {
             alert("Please enter youe Email ID and Password")
         } else {
             setUserArr([...userArr, user])
+            localStorage.setItem("user", JSON.stringify([...userArr, user]));
         }
 
         setUser({
@@ -56,6 +58,7 @@ export default function UserCrud() {
     const deleteHandler = (index) => {
         let filterData = userArr.filter((e, i) => i !== index)
         setUserArr(filterData)
+        localStorage.setItem("user", JSON.stringify(filterData));
     }
 
     const editHandler = (data, index) => {
@@ -73,6 +76,7 @@ export default function UserCrud() {
             }
         })
         setUserArr(newData);
+        localStorage.setItem("user", JSON.stringify(newData));
         setUser({
             name: "",
             email: "",

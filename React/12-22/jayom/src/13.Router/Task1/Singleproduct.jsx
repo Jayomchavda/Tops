@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 import { Table } from 'reactstrap';
 
 export default function Singleproduct() {
-    let [products, setProducts] = useState([])
-
 
     let [data, setData] = useState({});
     let { id } = useParams();
@@ -28,7 +26,7 @@ export default function Singleproduct() {
             </div>
             <div>
 
-                <table className='d-flex align-content-center flex-column mt-3 fs-6 '>
+                <Table className='d-flex align-content-center flex-column mt-3 fs-6 '>
                     <tr>
                         <th>
                             Title : {data.title}
@@ -52,7 +50,7 @@ export default function Singleproduct() {
                             Description : {data.description}
                         </th>
                     </tr>
-                </table>
+                </Table>
             </div >
         </>
     )

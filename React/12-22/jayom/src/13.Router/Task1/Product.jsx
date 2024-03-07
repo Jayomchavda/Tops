@@ -8,7 +8,6 @@ export default function Product() {
     let [products, setProducts] = useState([])
 
     useEffect(() => {
-
         axios({
             method: "get",
             url: "https://fakestoreapi.com/products"
