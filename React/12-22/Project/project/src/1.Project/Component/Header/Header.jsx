@@ -16,11 +16,10 @@ export default function Header() {
                 <NavLink to={"/about"}> <MessageCircle /> About</NavLink >
                 <NavLink to={"/resume"}><User /> Resume</NavLink >
                 <NavLink to={"/contact"}><Phone /> Contact</NavLink >
-                <div>
-                    <Input placeholder='  Search...' style={{ borderRadius: "50px", width: "200px", height: "30px", }} />
-                    <Search role='button' style={{ border: "none" }} />
+                <div >
+                    <Input placeholder='  Search...' style={{ borderRadius: "50px", width: "200px", height: "30px", border: "none" }} />
+                    <Search size={30} role='button' style={{ border: "none", backgroundColor: "white", borderRadius: "50px" }} />
                 </div>
-
             </div>
 
         </div>
