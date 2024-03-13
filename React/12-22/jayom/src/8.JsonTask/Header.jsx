@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className='headercom'>
             <div>
-                <h1>LOGO</h1>
+                <h1 >LOGO</h1>
             </div>
             <div className='headerli' fw-medium >
                 <li> <a href="">HOME</a></li>

@@ -1,16 +1,7 @@
 import React from 'react'
 import { Button, Card, CardBody, CardImg, CardSubtitle, CardText, CardTitle } from 'reactstrap'
 
-function truncateString(inputString, maxLength) {
-    if (inputString.length <= maxLength) {
-        return inputString;
-    } else {
-        const truncatedString = inputString.slice(0, maxLength - 3) + '...';
-        return truncatedString;
-    }
-}
-
-export default function CardCom({ item }) {
+export default function Homecard({ item }) {
     return (
         <div>
             <Card
@@ -32,7 +23,7 @@ export default function CardCom({ item }) {
                 /> */}
                 <CardBody>
                     <CardTitle tag="h5">
-                        {truncateString(item?.title, 24)}
+                        {item?.title}
                     </CardTitle>
                     <CardSubtitle
                         className="mb-2 text-muted"
@@ -40,9 +31,9 @@ export default function CardCom({ item }) {
                     >
                         Price: {item?.price}.00 $
                     </CardSubtitle>
-                    <CardText>
-                        {truncateString(item?.description, 90)}
-                    </CardText>
+                    {/* <CardText>
+                            {truncateString(item?.description, 90)}
+                        </CardText> */}
                     <CardText>
                         Rating: {item?.rating.rate}  ({item?.rating.count})
                     </CardText>
@@ -52,5 +43,6 @@ export default function CardCom({ item }) {
                 </CardBody>
             </Card>
         </div>
+
     )
 }

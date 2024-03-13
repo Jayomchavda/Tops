@@ -24,7 +24,7 @@ export default function Users() {
     const navigate = useNavigate()
     return (
         <div>
-            <Table className='mt-3'
+            <Table className='mt-4'
             >
                 <thead>
                     <tr>

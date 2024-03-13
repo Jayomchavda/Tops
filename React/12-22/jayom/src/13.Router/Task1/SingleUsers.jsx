@@ -23,7 +23,7 @@ export default function SingleUsers() {
     }, [])
     return (
         <div>
-            <Table className='mt-3' style={{ backgroundColor: "ButtonHighlight" }}
+            <Table className='mt-4' style={{ backgroundColor: "rgb(190, 217, 241)  " }}
             >
                 <tr>
                     <th>

@@ -14,6 +14,9 @@ import Product from './Product'
 import Singleproduct from './Singleproduct'
 import Users from './Fashion/Users'
 import SingleUsers from './SingleUsers'
+import Wishlist from './Fashion/Wishlist'
+import Login from './Fashion/Login'
+import Profile from './Profile'
 
 export default function Router() {
     return (
@@ -21,15 +24,19 @@ export default function Router() {
             <BrowserRouter>
                 <Header />
 
-                <div className='align-content-center text-center   '>
+                <div className='align-content-center text-center mt-4     '>
                     <Routes>
-                        <Route path='/home' element={<Home />} />
+                        <Route path='/' element={<Home />} />
                         <Route path='/about' element={<About />} />
-                        <Route path="/user" element={<UserCrud />} />
+                        <Route path="/account" element={<UserCrud />} />
                         <Route path="/product" element={<Product />} />
                         <Route path="/product/:id" element={<Singleproduct />} />
                         <Route path="/users" element={<Users />} />
                         <Route path="/singleusers/:id" element={<SingleUsers />} />
+                        <Route path="/wishlist" element={<Wishlist />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/profile" element={<Profile />} />
+
 
 
 
