@@ -6,8 +6,7 @@ export default function Home() {
     let [productdata, setProductdata] = useState(data)
     console.log("====>", productdata)
     return (
-        <div>
-
+        <div className=''>
             {
                 productdata?.map((e, id) => {
                     return <Homecard key={id} item={e} />

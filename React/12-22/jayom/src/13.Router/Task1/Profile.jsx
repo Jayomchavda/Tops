@@ -28,10 +28,10 @@ export default function Profile() {
                     >
                         <h1 className="text-center">User Profile</h1>
                         <hr />
-                        Email :{user.email}
+                        Email : {user.email}
 
                         <br />
-                        password: {user.password}
+                        password : {user.password}
                         <Button onClick={() => navigate("/")} className="mt-3 w-100" color="danger">
                             Logout <LogOut />
                         </Button>

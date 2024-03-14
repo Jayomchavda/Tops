@@ -22,7 +22,7 @@ export default function Login() {
     return (
         <div style={{ backgroundColor: "rgb(127 206 241 / 62%)" }} className='d-flex justify-content-center '>
             <Form style={{ marginTop: "70px", backgroundColor: "white", margin: "60px" }} className='w-25 border rounded-4 p-3' >
-                <h1>Login</h1>
+                <h1 className='mt-3'>Login</h1>
                 <hr />
                 <FormGroup>
                     {/* <Label for="exampleEmail">
@@ -53,7 +53,7 @@ export default function Login() {
                     />
                 </FormGroup>
 
-                <Button style={{ borderRadius: "50px" }} onClick={() => submitHandler()} color='danger' className='w-100'>
+                <Button style={{ borderRadius: "50px" }} onClick={() => submitHandler()} color='danger' className='w-100 mb-4 '>
                     Login
                 </Button>
 

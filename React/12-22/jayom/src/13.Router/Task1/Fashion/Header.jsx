@@ -1,6 +1,7 @@
 import { CircleUserRound, Heart, Home, MessageCircle, Shirt, ShoppingCart, User, Users } from 'lucide-react'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { Button } from 'reactstrap'
 
 export default function Header() {
     return (
@@ -16,6 +17,7 @@ export default function Header() {
                 <NavLink to={"users"}><Users />USERS</NavLink>
                 <NavLink to={"wishlist"}><Heart /> WISHLIST</NavLink>
                 <NavLink to={"login"}><User /> LOGIN</NavLink>
+                <NavLink to={"signup"}><Button color='danger'>SIGN UP  </Button> </NavLink>
                 <NavLink to={"account"}><CircleUserRound />ACCOUNT</NavLink>
             </div >
         </div >

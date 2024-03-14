@@ -17,6 +17,7 @@ import SingleUsers from './SingleUsers'
 import Wishlist from './Fashion/Wishlist'
 import Login from './Fashion/Login'
 import Profile from './Profile'
+import Signup from './Signup'
 
 export default function Router() {
     return (
@@ -36,6 +37,8 @@ export default function Router() {
                         <Route path="/wishlist" element={<Wishlist />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/profile" element={<Profile />} />
+                        <Route path="/signup" element={<Signup />} />
+
 
 
 
