@@ -18,6 +18,7 @@ export default function Header() {
                 <NavLink to={"wishlist"}><Heart /> WISHLIST</NavLink>
                 <NavLink to={"login"}><User /> LOGIN</NavLink>
                 <NavLink to={"signup"}><Button color='danger'>SIGN UP  </Button> </NavLink>
+                <NavLink to={"register"}><Button color='danger'>REGISTER  </Button> </NavLink>
                 <NavLink to={"account"}><CircleUserRound />ACCOUNT</NavLink>
             </div >
         </div >
