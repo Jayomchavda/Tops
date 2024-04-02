@@ -22,6 +22,7 @@ import Header from './8.JsonTask/Header.jsx';
 import InputMain from './12.Input/InputMain.jsx';
 import SimpleRouter from './13.Router/SimpleRouter/SimpleRouter.jsx';
 import Main from './13.Router/Task1/Main.jsx';
+import Todo from './0.Task/Todo.jsx';
 
 
 
@@ -78,7 +79,12 @@ export default function App() {
       {/* =====================  13. Router  ==================== */}
 
       {/* <SimpleRouter /> */}
-      <Main />
+      {/* <Main /> */}
+
+      {/* =====================  0. Task  ==================== */}
+
+      <Todo />
+
 
 
 
