@@ -1,11 +1,13 @@
 import { Check, Edit, Trash, Undo2 } from 'lucide-react';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Input } from 'reactstrap'
 
 export default function Todo() {
     let [task, setTask] = useState("")
     let [pendingTask, setPendingTask] = useState([]);
     let [doneTask, setDoneTask] = useState([]);
+    let [index, setIndex] = useState("")
+    let [updatemode, setUpdatemode] = useState(true);
 
     const taskEvent = (e) => {
         setTask(e.target.value)
@@ -26,13 +28,67 @@ export default function Todo() {
         });
     };
 
+    const movepending = (index, e) => {
+        setPendingTask([...pendingTask, e]);
+
+        setDoneTask((oldDoneTasks) => {
+            return oldDoneTasks.filter((_, i) => i !== index);
+        });
+    }
+
+    const deletehandler = (index) => {
+        let filterdata = doneTask.filter((e, i) => i !== index);
+        setDoneTask(filterdata);
+    }
+
+    const edithandler = (data, index) => {
+        setTask(data);
+        setIndex(index);
+        setUpdatemode(false);
+    }
+
+    useEffect(() => {
+        const storedPendingTasks = JSON.parse(localStorage.getItem('pendingTasks')) || [];
+        const storedDoneTasks = JSON.parse(localStorage.getItem('doneTasks')) || [];
+        setPendingTask(storedPendingTasks);
+        setDoneTask(storedDoneTasks);
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('pendingTasks', JSON.stringify(pendingTask));
+        localStorage.setItem('doneTasks', JSON.stringify(doneTask));
+    }, [pendingTask, doneTask]);
+
+    const updateCon = () => {
+        let newData = pendingTask.map((e, i) => {
+            if (i === index) {
+                return task
+            } else {
+                return e
+            }
+        })
+        setPendingTask(newData);
+        setUpdatemode(true);
+        setTask("");
+    }
+
+
+
+
+
     return (
         <div className='w-25 mt-3 '>
             <Input
                 onChange={taskEvent}
                 value={task}
                 placeholder='Enter Your name' />
-            <Button onClick={addCon} color='danger' className='mt-2 w-100'>Add</Button>
+
+            {
+                updatemode ? <Button onClick={() => addCon()} color='danger' className='mt-2 w-100'>Add</Button>
+                    : <Button onClick={() => updateCon()} color='danger' className='mt-2 w-100'>Update</Button>
+            }
+
+
 
             <div style={{ border: "1px solid black" }} className='mt-3'>
                 <h1 className='text-center'>Pending Task</h1>
@@ -42,7 +98,7 @@ export default function Todo() {
                             return <li>
                                 <span className='d-flex justify-content-between'>
                                     <p class="m-0">{e}</p>
-                                    <p class="m-0"><Edit color='blue' />
+                                    <p class="m-0"><Edit onClick={() => edithandler(e, i)} color='blue' />
                                         <Check onClick={() => movedone(i, e)} color="#00ff1e" role='button' />
                                     </p>
                                 </span>
@@ -55,9 +111,15 @@ export default function Todo() {
             <div style={{ border: "1px solid black" }} className='mt-3'>
                 <h1 className='text-center'>Done Task</h1>
                 <ol>
-                    {doneTask.map((doneTaskvalue, index) => {
-                        return <li key={index}>{doneTaskvalue}
-                            <Undo2 />
+                    {doneTask.map((e, index) => {
+                        return <li key={index}>
+                            <span className='d-flex justify-content-between'>
+                                <p className='m-0'>{e}</p>
+                                <p className='m-0'>
+                                    <Undo2 onClick={() => movepending(index, e)} role='button' />
+                                    <Trash onClick={() => deletehandler(index)} role='button' color='red' />
+                                </p>
+                            </span>
                         </li>
                     })}
                 </ol>
