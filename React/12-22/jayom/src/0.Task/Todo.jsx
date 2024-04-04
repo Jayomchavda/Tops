@@ -14,10 +14,15 @@ export default function Todo() {
     }
 
     const addCon = () => {
-        setPendingTask((oldtask) => {
-            return [...oldtask, task]
-        })
-        setTask("");
+        if (task === "") {
+            alert("Please enter your Task.");
+        }
+        else {
+            setPendingTask((oldtask) => {
+                return [...oldtask, task]
+            })
+            setTask("");
+        }
     }
 
     const movedone = (index, e) => {
@@ -77,11 +82,11 @@ export default function Todo() {
 
 
     return (
-        <div className='w-25 mt-3 '>
+        <div className='w-25 mt-3  '>
             <Input
                 onChange={taskEvent}
                 value={task}
-                placeholder='Enter Your name' />
+                placeholder='Enter Your Task' />
 
             {
                 updatemode ? <Button onClick={() => addCon()} color='danger' className='mt-2 w-100'>Add</Button>
@@ -89,8 +94,7 @@ export default function Todo() {
             }
 
 
-
-            <div style={{ border: "1px solid black" }} className='mt-3'>
+            <div style={{ border: "1px solid black" }} className='mt-3  '>
                 <h1 className='text-center'>Pending Task</h1>
                 <div>
                     <ol >
@@ -123,9 +127,7 @@ export default function Todo() {
                         </li>
                     })}
                 </ol>
-
             </div>
-
         </div>
     )
 }
