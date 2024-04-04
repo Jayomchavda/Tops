@@ -23,6 +23,7 @@ import InputMain from './12.Input/InputMain.jsx';
 import SimpleRouter from './13.Router/SimpleRouter/SimpleRouter.jsx';
 import Main from './13.Router/Task1/Main.jsx';
 import Todo from './0.Task/Todo.jsx';
+import ChechboxTask from './0.Task/ChechboxTask.jsx';
 
 
 
@@ -83,7 +84,10 @@ export default function App() {
 
       {/* =====================  0. Task  ==================== */}
 
-      <Todo />
+      {/* <Todo /> */}
+      <ChechboxTask />
+
+
 
 
 
