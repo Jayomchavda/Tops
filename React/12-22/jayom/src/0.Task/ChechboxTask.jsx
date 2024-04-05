@@ -10,13 +10,25 @@ export default function ChechboxTask() {
         hockey: false
     });
 
+    // const checkboxHandler = (e) => {
+    //     const { name, checked } = e.target;
+    //     setCheckedItems(e => ({
+    //         ...e, [name]: checked
+    //     }));
+    // };
+    // console.log(checkedItems)
+
     const checkboxHandler = (e) => {
         const { name, checked } = e.target;
-        setCheckedItems(e => ({
-            ...e, [name]: checked
-        }));
+        if (checked !== checkedItems[name]) {
+            setCheckedItems(e => ({
+                ...e,
+                [name]: checked
+            }));
+            console.log("My Hobby", { [name]: checked });
+        }
     };
-    console.log(checkedItems)
+
 
 
 
