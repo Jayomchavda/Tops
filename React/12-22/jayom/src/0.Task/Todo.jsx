@@ -8,6 +8,7 @@ export default function Todo() {
     let [doneTask, setDoneTask] = useState([]);
     let [index, setIndex] = useState("")
     let [updatemode, setUpdatemode] = useState(true);
+    let [selectCheck, setSelectCheck] = useState([])
 
     const taskEvent = (e) => {
         setTask(e.target.value)
@@ -77,6 +78,41 @@ export default function Todo() {
         setTask("");
     }
 
+    const checkboxcheck = (e, i) => {
+        console.log("e,i", e.target.checked, i);
+        if (e.target.checked) {
+            setSelectCheck([...selectCheck, i])
+        } else {
+            let filterData = selectCheck.filter((e) => e !== i)
+            setSelectCheck(filterData)
+        }
+    }
+
+
+    const doneIndex = () => {
+        const newPendingTasks = [...pendingTask];
+
+        const newDoneTasks = [...doneTask];
+
+        selectCheck.forEach((selectedIndex) => {
+            const taskToMove = newPendingTasks[selectedIndex];
+            newPendingTasks.splice(selectedIndex, 1);
+            newDoneTasks.push(taskToMove);
+        });
+
+        setPendingTask(newPendingTasks);
+        setDoneTask(newDoneTasks);
+
+        setSelectCheck([]);
+    };
+
+
+
+
+
+
+
+
 
 
 
@@ -101,14 +137,17 @@ export default function Todo() {
                         {pendingTask.map((e, i) => {
                             return <li>
                                 <span className='d-flex justify-content-between'>
-                                    <p class="m-0">{e}</p>
-                                    <p class="m-0"><Edit onClick={() => edithandler(e, i)} color='blue' />
+                                    <p className="m-0">{e}</p>
+                                    <p className="m-0">
+                                        <input id='checkbox' type="checkbox" onChange={(e) => checkboxcheck(e, i)} checked={selectCheck.includes(i)} />
+                                        <Edit onClick={() => edithandler(e, i)} color='blue' />
                                         <Check onClick={() => movedone(i, e)} color="#00ff1e" role='button' />
                                     </p>
                                 </span>
                             </li>
                         })}
                     </ol>
+                    <Button onClick={() => doneIndex()} color='danger'>done Task </Button>
                 </div>
             </div>
 

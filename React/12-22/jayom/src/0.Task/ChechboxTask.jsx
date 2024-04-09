@@ -10,13 +10,6 @@ export default function ChechboxTask() {
         hockey: false
     });
 
-    // const checkboxHandler = (e) => {
-    //     const { name, checked } = e.target;
-    //     setCheckedItems(e => ({
-    //         ...e, [name]: checked
-    //     }));
-    // };
-    // console.log(checkedItems)
 
     const checkboxHandler = (e) => {
         const { name, checked } = e.target;
@@ -29,14 +22,12 @@ export default function ChechboxTask() {
         }
     };
 
-
-
-
     return (
         <div>
             <Form>
                 <h1>My Hobby</h1>
                 <FormGroup check>
+
                     <Input type="checkbox" name="cricket" checked={checkedItems.cricket} onChange={checkboxHandler} />
                     <Label check>
                         Cricket

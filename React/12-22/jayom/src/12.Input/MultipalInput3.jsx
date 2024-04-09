@@ -5,7 +5,7 @@ import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 export default function MultipalInput3() {
     let [student, setStudent] = useState({
         studentname: "",
-        class: "",
+        className: "",
         Rollno: "",
         GRno: "",
         City: "",
@@ -19,7 +19,7 @@ export default function MultipalInput3() {
         setStudentArr([...studentArr, student])
         setStudent({
             studentname: "",
-            class: "",
+            className: "",
             Rollno: "",
             GRno: "",
             City: "",
@@ -53,15 +53,15 @@ export default function MultipalInput3() {
                     </FormGroup>
 
                     <FormGroup>
-                        <Label for="class">
+                        <Label for="className">
                             Class
                         </Label>
                         <Input
-                            id="class"
-                            placeholder="Enter class"
+                            id="className"
+                            placeholder="Enter className"
                             type="text"
-                            onChange={(e) => setStudent({ ...student, class: e?.target?.value })}
-                            value={student.class}
+                            onChange={(e) => setStudent({ ...student, className: e?.target?.value })}
+                            value={student.className}
                         />
                     </FormGroup>
 
@@ -121,7 +121,7 @@ export default function MultipalInput3() {
                                 Student Name
                             </th>
                             <th>
-                                class
+                                className
                             </th>
                             <th>
                                 Rollno
@@ -147,7 +147,7 @@ export default function MultipalInput3() {
                                             {e?.studentname}
                                         </td>
                                         <td>
-                                            {e?.class}
+                                            {e?.className}
                                         </td>
                                         <td>
                                             {e?.Rollno}

@@ -17,7 +17,7 @@ export default function Header() {
             </div>
             <div>
                 <Input className='inputbox' placeholder='Search here' />
-                <i class="bi bi-search"></i>
+                <i className="bi bi-search"></i>
 
             </div>
         </div>

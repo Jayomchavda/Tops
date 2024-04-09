@@ -2,7 +2,6 @@ import React from 'react'
 // import ReactDOM from 'react-dom/client'
 import './index.css'
 
-import ClassCom from './1.Component/class/ClassCom.jsx';
 import FunctionalCom from './2.functional/FunctionalCom.jsx';
 import ClassCom2 from './1.Component/ClassCom2.jsx';
 import Home from './3.Style/Home.jsx';
@@ -84,8 +83,8 @@ export default function App() {
 
       {/* =====================  0. Task  ==================== */}
 
-      {/* <Todo /> */}
-      <ChechboxTask />
+      <Todo />
+      {/* <ChechboxTask /> */}
 
 
 
