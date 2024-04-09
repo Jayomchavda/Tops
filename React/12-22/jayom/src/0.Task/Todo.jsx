@@ -147,7 +147,10 @@ export default function Todo() {
                             </li>
                         })}
                     </ol>
-                    <Button onClick={() => doneIndex()} color='danger'>done Task </Button>
+                    <div className="text-center mb-1">
+
+                        <Button onClick={() => doneIndex()} color='danger'>done Task </Button>
+                    </div>
                 </div>
             </div>
 
