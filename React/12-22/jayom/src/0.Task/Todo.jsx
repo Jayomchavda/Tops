@@ -10,6 +10,7 @@ export default function Todo() {
     let [updatemode, setUpdatemode] = useState(true);
     let [selectCheck, setSelectCheck] = useState([])
 
+
     const taskEvent = (e) => {
         setTask(e.target.value)
     }
@@ -89,22 +90,27 @@ export default function Todo() {
     }
 
 
-    const doneIndex = () => {
-        const newPendingTasks = [...pendingTask];
 
-        const newDoneTasks = [...doneTask];
+
+    const doneIndex = () => {
+        const newPendingTask = [...pendingTask];
+        const newDoneTask = [...doneTask];
 
         selectCheck.forEach((selectedIndex) => {
-            const taskToMove = newPendingTasks[selectedIndex];
-            newPendingTasks.splice(selectedIndex, 1);
-            newDoneTasks.push(taskToMove);
+            const taskToMove = newPendingTask[selectedIndex];
+            newPendingTask.splice(selectedIndex, 1);
+            newDoneTask.push(taskToMove);
         });
 
-        setPendingTask(newPendingTasks);
-        setDoneTask(newDoneTasks);
-
+        setPendingTask(newPendingTask);
+        setDoneTask(newDoneTask);
         setSelectCheck([]);
+
+        console.log("New Pending Task:", newPendingTask);
+        console.log("New Done Task:", newDoneTask);
     };
+
+
 
 
 
@@ -148,8 +154,7 @@ export default function Todo() {
                         })}
                     </ol>
                     <div className="text-center mb-1">
-
-                        <Button onClick={() => doneIndex()} color='danger'>done Task </Button>
+                        <Button onClick={() => doneIndex()} color='danger'>Done Task </Button>
                     </div>
                 </div>
             </div>
@@ -162,6 +167,7 @@ export default function Todo() {
                             <span className='d-flex justify-content-between'>
                                 <p className='m-0'>{e}</p>
                                 <p className='m-0'>
+
                                     <Undo2 onClick={() => movepending(index, e)} role='button' />
                                     <Trash onClick={() => deletehandler(index)} role='button' color='red' />
                                 </p>
@@ -169,6 +175,7 @@ export default function Todo() {
                         </li>
                     })}
                 </ol>
+
             </div>
         </div>
     )
