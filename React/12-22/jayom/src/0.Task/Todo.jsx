@@ -90,15 +90,13 @@ export default function Todo() {
     }
 
 
-
-
     const doneIndex = () => {
         const newPendingTask = [...pendingTask];
         const newDoneTask = [...doneTask];
 
-        selectCheck.forEach((selectedIndex) => {
-            const taskToMove = newPendingTask[selectedIndex];
-            newPendingTask.splice(selectedIndex, 1);
+        selectCheck.forEach((selectIndex) => {
+            const taskToMove = newPendingTask[selectIndex];
+            newPendingTask.splice(selectIndex, 1);
             newDoneTask.push(taskToMove);
         });
 
@@ -109,6 +107,10 @@ export default function Todo() {
         console.log("New Pending Task:", newPendingTask);
         console.log("New Done Task:", newDoneTask);
     };
+
+
+
+
 
 
 
@@ -167,7 +169,6 @@ export default function Todo() {
                             <span className='d-flex justify-content-between'>
                                 <p className='m-0'>{e}</p>
                                 <p className='m-0'>
-
                                     <Undo2 onClick={() => movepending(index, e)} role='button' />
                                     <Trash onClick={() => deletehandler(index)} role='button' color='red' />
                                 </p>
@@ -175,7 +176,6 @@ export default function Todo() {
                         </li>
                     })}
                 </ol>
-
             </div>
         </div>
     )
