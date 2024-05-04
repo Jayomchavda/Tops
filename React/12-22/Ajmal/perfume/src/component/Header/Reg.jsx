@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Reg() {
+export default function () {
     return (
-        <div>Reg</div>
+        <div>   </div>
     )
 }

@@ -3,6 +3,7 @@ import React from 'react'
 
 
 export default function Cardcom({ item }) {
+
     return (
         <div class="p-1 mt-5">
             <div className=" p-4 mt-5 rounded-lg" style={{ backgroundColor: item.cardcolor }}>
