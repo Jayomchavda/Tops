@@ -3,6 +3,8 @@ import logo from "../../../public/ajmallogo.svg";
 import { Navbar, NavbarBrand, NavbarCollapse } from "flowbite-react";
 import { NavLink } from "react-router-dom";
 import { Heart, LogIn, Search, ShoppingCart } from "react-feather";
+import { Link } from 'react-router-dom';
+
 
 export default function Header() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -18,7 +20,10 @@ export default function Header() {
             {/* Page content */}
             <Navbar fluid rounded className="m-0 py-4 border-b">
                 <NavbarBrand className="pl-10">
-                    <img src={logo} className="mr-3 h-[70px]" alt="Flowbite React Logo" />
+                    <Link to="/">
+                        <img src={logo} className="mr-3 h-[70px]" alt="Flowbite React Logo" />
+                    </Link>
+
                 </NavbarBrand>
 
                 <NavbarCollapse>
@@ -55,7 +60,9 @@ export default function Header() {
             </Navbar>
 
             {/* Sidebar */}
-            <div className={`fixed inset-y-0 right-0 w-80 bg-gray-900 text-white transition-transform duration-300 transform ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`fixed inset-y-0 right-0 w-80 bg-gray-900 text-white transition-transform duration-300 transform ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{
+                zIndex: 5555, top: 120
+            }}>
 
                 <div className="p-4 flex justify-center items-center gap-3 ">
                     <Heart />
