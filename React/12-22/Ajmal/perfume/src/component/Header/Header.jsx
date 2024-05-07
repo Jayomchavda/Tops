@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 import logo from "../../../public/ajmallogo.svg";
 import { Navbar, NavbarBrand, NavbarCollapse } from "flowbite-react";
-import { NavLink } from "react-router-dom";
-import { Heart, LogIn, Search, ShoppingCart } from "react-feather";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Heart, LogIn, Search, ShoppingCart, User, UserCheck, UserMinus } from "react-feather";
 import { Link } from 'react-router-dom';
+import { useCookies } from "react-cookie";
+
 
 
 export default function Header() {
+    const navigate = useNavigate();
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
     };
+
+    let [cookie, setCookie] = useCookies(["token"]);
+    console.log("-----------  cookie----------->", cookie);
+
 
 
 
@@ -48,28 +55,33 @@ export default function Header() {
                     </div>
                 </NavbarCollapse>
                 <div className="flex items-center [&_*]:mr-5 text-gray-400">
-                    <img
-                        src="https://in.ajmal.com/media//homepage/country_flag/india.webp"
-                        alt=""
-                        className="w-[30px] h-[30px] rounded-3xl border border-gray-500"
-                    />
-                    <LogIn role='button' />
+                    {cookie?.token ? (
+
+                        <img src="../../../public/profile.jpg" className='size-[30px]'
+                            onClick={() => navigate("/profile")} role='button' />
+
+                    ) : (
+                        <LogIn onClick={() => navigate("/login")} />
+                    )}
                     <ShoppingCart role='button' />
                     <Heart role='button' onClick={toggleSidebar} />
                 </div>
             </Navbar>
 
             {/* Sidebar */}
-            <div className={`fixed inset-y-0 right-0 w-80 bg-gray-900 text-white transition-transform duration-300 transform ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{
-                zIndex: 5555, top: 120
-            }}>
 
+            <div className={`fixed inset-y-0 right-0 w-80 bg-slate-700 text-white transition-transform duration-300 transform ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ zIndex: 5555, top: 119 }}>
                 <div className="p-4 flex justify-center items-center gap-3 ">
                     <Heart />
                     <h2 className='text-[23px] title'>My Wishlist</h2>
                     <Heart />
                 </div>
-                <hr className='mt-4' />/
+
+                <hr />
+
+                <div className="overflow-y-auto max-h-96">
+                    a
+                </div>
             </div>
         </div>
     );

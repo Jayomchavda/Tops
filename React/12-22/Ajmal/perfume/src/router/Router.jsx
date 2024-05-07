@@ -4,6 +4,8 @@ import Header from '../component/Header/Header'
 import Shop from '../component/Header/Shop'
 import Home from '../component/Header/Home'
 import Login from '../component/Header/Login'
+import Reg from '../component/Header/Reg'
+import Profile from '../component/Header/Profile'
 
 
 export default function Router() {
@@ -14,6 +16,8 @@ export default function Router() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
+                    <Route path='/register' element={<Reg />} />
+                    <Route path='/profile' element={<Profile />} />
                     <Route path='/shop' element={<Shop />} />
                 </Routes>
             </BrowserRouter>

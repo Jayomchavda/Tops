@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Bestseller() {
     return (
-        <div class="max-w-[1320px] mx-auto">
+        <div class="max-w-[1470px] mx-auto">
             <div className='py-10 flex justify-between items-center mt-5'>
                 <i className='text-5xl title font-italic'>Best Sellers </i>
                 <a href="#" className="flex items-center inherit-color text-black hover:text-blue-500">Discover all <img className="ms-1" width="18px" src="/public/arrow-right.svg" alt="" /> </a>
@@ -37,36 +37,20 @@ export default function Bestseller() {
                 </div >
             </div>
 
-            <div className='py-10 flex justify-between items-end mt-5'>
-                <div className='flex flex-col'>
+            <div className='gift py-10 flex justify-between items-end mt-5 w-[1470px]'>
+                <div className='flex flex-col w-[50%]'>
                     <i className='text-5xl title font-italic self-start'>A Gifting Moment </i>
-                    <p className='w-1/2 text-left mt-6 tracking-wider leading-6'>Step into a realm of luxury and sophistication with Ajmal Perfumes. Each bottle is a work of art, meticulously designed and adorned with intricate details that reflect the essence of the fragrance within. With every spritz, your loved ones will be transported to a world of captivating aromas, creating memories that will be treasured for a lifetime.</p>
+                    <p className='w-full text-left mt-6 tracking-wider leading-6 overflow-hidden'>
+                        Step into a realm of luxury and sophistication with Ajmal Perfumes. Each bottle is a work of art, meticulously designed and adorned with intricate details that reflect the essence of the fragrance within.
+                    </p>
                 </div>
                 <div>
-                    <a href="#" class="flex whitespace-nowrap items-center text-black hover:text-blue-500 ml-auto">
+                    <a href="#" className="flex whitespace-nowrap items-center text-black hover:text-blue-500 ml-auto">
                         Discover all
-                        <img class="ml-1" width="18px" src="/public/arrow-right.svg" alt="" />
+                        <img className="ml-1" width="18px" src="/public/arrow-right.svg" alt="" />
                     </a>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     );

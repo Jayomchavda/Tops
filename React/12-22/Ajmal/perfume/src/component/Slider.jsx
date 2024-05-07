@@ -26,7 +26,7 @@ const responsive = {
 
 const Slider = ({ data }) => {
     return (
-        <div className="w-[1320px] mx-auto">
+        <div className="w-[1470px] mx-auto">
             {data && <Carousel
                 responsive={responsive}
                 // showDots={false}
