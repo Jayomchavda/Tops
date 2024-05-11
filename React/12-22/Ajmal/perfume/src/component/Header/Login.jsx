@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function Login() {
+
+    // let [user, setuser] = useState({ email: "", password: "" });
+
+
     let [credential, setCredential] = useState({ email: "", password: "" });
     let [cookie, setCookie] = useCookies([]);
 
@@ -16,12 +20,12 @@ export default function Login() {
         if (!Email || !Password) {
             alert("Please enter both email and password");
             return;
-
         }
+
+        console.log("Email:", Email);
+        console.log("Password:", Password);
         setCookie("token", "123")
         navigate("/");
-
-
 
 
         e.preventDefault();

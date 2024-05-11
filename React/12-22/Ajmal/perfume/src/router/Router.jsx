@@ -6,6 +6,7 @@ import Home from '../component/Header/Home'
 import Login from '../component/Header/Login'
 import Reg from '../component/Header/Reg'
 import Profile from '../component/Header/Profile'
+import Ourstore from '../component/Header/Ourstore'
 
 
 export default function Router() {
@@ -19,6 +20,7 @@ export default function Router() {
                     <Route path='/register' element={<Reg />} />
                     <Route path='/profile' element={<Profile />} />
                     <Route path='/shop' element={<Shop />} />
+                    <Route path='/ourstore' element={<Ourstore />} />
                 </Routes>
             </BrowserRouter>
         </div>

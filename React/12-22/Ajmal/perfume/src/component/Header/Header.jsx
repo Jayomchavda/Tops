@@ -43,14 +43,14 @@ export default function Header() {
                             />
                             <Search className="text-gray-400 rounded-r-3xl" />
                         </div>
-                        <div className="flex justify-between [&_*]:font-bold [&_*]:text-gray-500">
+                        <div className="flex justify-between [&_*]:font-bold [&_*]:text-gray-500 ">
                             <NavLink to="" active>
-                                Home
+                                HOME
                             </NavLink>
-                            <NavLink to="shop">Shop</NavLink>
-                            <NavLink to="#">Ajmal Studio</NavLink>
-                            <NavLink to="#">About</NavLink>
-                            <NavLink to="#">Our Stores</NavLink>
+                            <NavLink to="shop">SHOP</NavLink>
+                            <NavLink to="Ourstore">OUR STORES</NavLink>
+                            <NavLink to="#">AJMAL STUDIO</NavLink>
+                            <NavLink to="#">ABOUT</NavLink>
                         </div>
                     </div>
                 </NavbarCollapse>
@@ -70,7 +70,7 @@ export default function Header() {
 
             {/* Sidebar */}
 
-            <div className={`fixed inset-y-0 right-0 w-80 bg-slate-700 text-white transition-transform duration-300 transform ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ zIndex: 5555, top: 119 }}>
+            <div className={`fixed inset-y-0 right-0 w-80 bg-slate-100 text-balck transition-transform duration-300 transform ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ zIndex: 5555, top: 119 }}>
                 <div className="p-4 flex justify-center items-center gap-3 ">
                     <Heart />
                     <h2 className='text-[23px] title'>My Wishlist</h2>

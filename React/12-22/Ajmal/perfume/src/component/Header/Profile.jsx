@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +15,9 @@ export default function Profile() {
         navigate("/");
         window.scrollTo(0, 0);
     };
+
+
+
     return (
         <div className="ml-36 mr-36 mt-3">
             <h1 className="text-center mb-14 text-4xl font-semibold">ACCOUNT</h1>
