@@ -29,6 +29,8 @@ export default function Reg() {
         console.log("---->")
     };
 
+    console.log(user);
+
     return (
         <>
             <div className="text-center py-8 flex flex-col items-center ">
@@ -43,6 +45,8 @@ export default function Reg() {
                         type="text"
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         placeholder="Enter your name"
+                        value={user.name}
+                        onChange={(e) => setUser({ ...user, name: e.target.value })}
                         id="name"
                     />
                     <label htmlFor="email">Email*</label>
