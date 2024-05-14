@@ -26,10 +26,12 @@ export default function Reg() {
     const navigate = useNavigate();
 
     const registerHandler = async () => {
-        console.log("---->")
+        // console.log("---->")
+        console.log(user);
+        console.log(address);
+
     };
 
-    console.log(user);
 
     return (
         <>
@@ -53,6 +55,8 @@ export default function Reg() {
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
+                        onChange={(e) => setUser({ ...user, email: e.target.value })}
+
                         placeholder="Enter your email"
                         id="email"
                     />
@@ -60,6 +64,8 @@ export default function Reg() {
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
+                        onChange={(e) => setUser({ ...user, number: e.target.value })}
+
                         placeholder="Enter your number"
                         id="number"
                     />
@@ -67,6 +73,8 @@ export default function Reg() {
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
+                        onChange={(e) => setUser({ ...user, age: e.target.value })}
+
                         placeholder="Enter your age"
                         id="age"
                     />
@@ -75,6 +83,8 @@ export default function Reg() {
                         <div>
                             <input
                                 type="radio"
+                                value="male"
+                                onChange={(e) => setUser({ ...user, gender: e.target.value })}
                                 className="focus:ring-0 mr-2 "
                             />
                             <label htmlFor="">Male*</label>
@@ -82,6 +92,8 @@ export default function Reg() {
                         <div>
                             <input
                                 type="radio"
+                                onChange={(e) => setUser({ ...user, gender: e.target.value })}
+                                value="female"
                                 className="focus:ring-0 mr-2 "
                             />
                             <label htmlFor="">Female*</label>
@@ -91,6 +103,8 @@ export default function Reg() {
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
+                        onChange={(e) => setAddress({ ...address, add: e?.target?.value })}
+
                         placeholder="Enter your add"
                         id="add"
                     />
@@ -98,6 +112,8 @@ export default function Reg() {
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
+                        onChange={(e) => setAddress({ ...address, city: e.target.value })}
+
                         placeholder="Enter your city"
                         id="city"
                     />
@@ -106,6 +122,8 @@ export default function Reg() {
 
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
+                        onChange={(e) => setAddress({ ...address, state: e.target.value })}
+
                         placeholder="Enter your state"
                         id="state"
                     />
@@ -113,6 +131,8 @@ export default function Reg() {
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
+                        onChange={(e) => setAddress({ ...address, pinCode: e.target.value })}
+
                         placeholder="Enter your pincode"
                         id="pincode"
                     />
