@@ -34,7 +34,6 @@ const Slider = ({ data }) => {
                 infinite={false}  >
 
                 {data?.map?.((item) => {
-                    console.log("items", item)
                     return <div>
                         <Cardcom key={item?.id} item={item} />
                     </div>

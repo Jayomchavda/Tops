@@ -11,7 +11,7 @@ export default function Shop() {
     return (
         <>
             <div className='my-4  '>
-                <Dropdown label="Short By recommended" dismissOnClick={false} class="bg-white border border-black " >
+                <Dropdown label="Short By recommended" dismissOnClick={false} className="bg-white border border-black " >
                     <Dropdown.Item>Size</Dropdown.Item>
                     <Dropdown.Item>Best Seller</Dropdown.Item>
                     <Dropdown.Item>Revenue</Dropdown.Item>
@@ -23,7 +23,7 @@ export default function Shop() {
                     <Dropdown.Item>Price</Dropdown.Item>
                 </Dropdown>
 
-                <Dropdown label="Category" dismissOnClick={false} class="bg-white border border-black" >
+                <Dropdown label="Category" dismissOnClick={false} className="bg-white border border-black" >
                     <Dropdown.Item>All</Dropdown.Item>
                     <Dropdown.Item>Shop</Dropdown.Item>
                     <Dropdown.Item>Ramadan Sale</Dropdown.Item>
@@ -35,7 +35,7 @@ export default function Shop() {
                     <Dropdown.Item>Ajmal </Dropdown.Item>
                 </Dropdown>
 
-                <Dropdown label="Size" dismissOnClick={false} class="bg-white border border-black" >
+                <Dropdown label="Size" dismissOnClick={false} className="bg-white border border-black" >
                     <Dropdown.Item>All</Dropdown.Item>
                     <Dropdown.Item>3 ml</Dropdown.Item>
                     <Dropdown.Item>6 ml</Dropdown.Item>
@@ -47,7 +47,7 @@ export default function Shop() {
                     <Dropdown.Item>20 ml </Dropdown.Item>
                 </Dropdown>
 
-                <Dropdown label="Display Gender" dismissOnClick={false} class="bg-white border border-black" >
+                <Dropdown label="Display Gender" dismissOnClick={false} className="bg-white border border-black" >
                     <Dropdown.Item>All</Dropdown.Item>
                     <Dropdown.Item>Male</Dropdown.Item>
                     <Dropdown.Item>Female</Dropdown.Item>

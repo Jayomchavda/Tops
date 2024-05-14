@@ -44,7 +44,7 @@ export default function Header() {
                             <Search className="text-gray-400 rounded-r-3xl" />
                         </div>
                         <div className="flex justify-between [&_*]:font-bold [&_*]:text-gray-500 ">
-                            <NavLink to="" active>
+                            <NavLink to="" >
                                 HOME
                             </NavLink>
                             <NavLink to="shop">SHOP</NavLink>

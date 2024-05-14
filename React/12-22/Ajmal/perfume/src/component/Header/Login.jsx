@@ -14,37 +14,8 @@ export default function Login() {
 
     const navigate = useNavigate();
     const loginHandler = (e) => {
-        const Email = credential.email.trim();
-        const Password = credential.password.trim();
-
-        if (!Email || !Password) {
-            alert("Please enter both email and password");
-            return;
-        }
-
-        console.log("Email:", Email);
-        console.log("Password:", Password);
-        setCookie("token", "123")
-        navigate("/");
-
-
-        e.preventDefault();
-        axios({
-            method: "post",
-            url: "http://localhost:9999/user/signin",
-            data: credential,
-        })
-            .then((res) => {
-                toast.success("Login successfully");
-                setCookie("user", res.data.data);
-                setCookie("token", res.data.token);
-                window.scrollTo(0, 0);
-                navigate("/login");
-            })
-            .catch((err) => {
-                toast.error("Somthing went wrong");
-            });
-
+        e.preventDefault()
+        console.log(credential)
 
     };
 
@@ -78,7 +49,7 @@ export default function Login() {
                         </p>
                         <div className="mb-5">
                             <label
-                                for="email"
+                                htmlFor="email"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
                                 E-MAIL *
@@ -96,7 +67,7 @@ export default function Login() {
                         </div>
                         <div className="mb-5">
                             <label
-                                for="password"
+                                htmlFor="password"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
                                 PASSWORD *

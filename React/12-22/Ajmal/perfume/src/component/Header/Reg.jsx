@@ -21,33 +21,12 @@ export default function Reg() {
     let [user, setUser] = useState(initialUser);
     let [address, setAddress] = useState(initialAddress);
 
-    // cookies
-    const [cookies, setCookie, removeCookie] = useCookies([]);
 
     // navigation
     const navigate = useNavigate();
 
     const registerHandler = async () => {
-        if (user.password !== user.conPassword) {
-            toast.error("Confirm password not match");
-            setUser({ ...user, conPassword: "" });
-        } else {
-            let mainData = { ...user, address: [address] };
-            try {
-                let response = await axios({
-                    method: "post",
-                    url: "http://localhost:9999/user/signup",
-                    data: mainData,
-                });
-                if (data) {
-                    setCookie("user", response.data.data);
-                    setCookie("token", response.data.token);
-                }
-                navigate("/");
-            } catch (error) {
-                toast.error(error.message);
-            }
-        }
+        console.log("---->")
     };
 
     return (
@@ -61,8 +40,6 @@ export default function Reg() {
                         <span className="text-gray-400">*Required Fields</span>
                         *</label>
                     <input
-                        onChange={(e) => setUser({ ...user, name: e?.target?.value })}
-                        value={user.name}
                         type="text"
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         placeholder="Enter your name"
@@ -70,8 +47,6 @@ export default function Reg() {
                     />
                     <label htmlFor="email">Email*</label>
                     <input
-                        onChange={(e) => setUser({ ...user, email: e?.target?.value })}
-                        value={user.email}
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         placeholder="Enter your email"
@@ -79,8 +54,6 @@ export default function Reg() {
                     />
                     <label htmlFor="number">Number*</label>
                     <input
-                        onChange={(e) => setUser({ ...user, number: e?.target?.value })}
-                        value={user.number}
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         placeholder="Enter your number"
@@ -88,8 +61,6 @@ export default function Reg() {
                     />
                     <label htmlFor="age">Age*</label>
                     <input
-                        onChange={(e) => setUser({ ...user, age: e?.target?.value })}
-                        value={user.age}
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         placeholder="Enter your age"
@@ -99,18 +70,14 @@ export default function Reg() {
                     <div className="flex gap-4 mb-2 mt-1">
                         <div>
                             <input
-                                onChange={(e) => setUser({ ...user, gender: "male" })}
                                 type="radio"
-                                checked={user.gender === "male"}
                                 className="focus:ring-0 mr-2 "
                             />
                             <label htmlFor="">Male*</label>
                         </div>
                         <div>
                             <input
-                                onChange={(e) => setUser({ ...user, gender: "female" })}
                                 type="radio"
-                                checked={user.gender === "female"}
                                 className="focus:ring-0 mr-2 "
                             />
                             <label htmlFor="">Female*</label>
@@ -118,8 +85,6 @@ export default function Reg() {
                     </div>
                     <label htmlFor="add">Address-1*</label>
                     <input
-                        onChange={(e) => setAddress({ ...address, add: e?.target?.value })}
-                        value={address.add}
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         placeholder="Enter your add"
@@ -127,8 +92,6 @@ export default function Reg() {
                     />
                     <label htmlFor="city">City*</label>
                     <input
-                        onChange={(e) => setAddress({ ...address, city: e?.target?.value })}
-                        value={address.city}
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         placeholder="Enter your city"
@@ -136,10 +99,7 @@ export default function Reg() {
                     />
                     <label htmlFor="state">State*</label>
                     <input
-                        onChange={(e) =>
-                            setAddress({ ...address, state: e?.target?.value })
-                        }
-                        value={address.state}
+
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         placeholder="Enter your state"
@@ -147,10 +107,6 @@ export default function Reg() {
                     />
                     <label htmlFor="pincode">Pincode*</label>
                     <input
-                        onChange={(e) =>
-                            setAddress({ ...address, pinCode: e?.target?.value })
-                        }
-                        value={address.pinCode}
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         placeholder="Enter your pincode"
@@ -158,8 +114,6 @@ export default function Reg() {
                     />
                     <label htmlFor="password">Password*</label>
                     <input
-                        onChange={(e) => setUser({ ...user, password: e?.target?.value })}
-                        value={user.password}
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="password"
                         placeholder="Enter your password"
@@ -167,10 +121,6 @@ export default function Reg() {
                     />
                     <label htmlFor="ConPassword">Confirm Password*</label>
                     <input
-                        onChange={(e) =>
-                            setUser({ ...user, conPassword: e?.target?.value })
-                        }
-                        value={user.conPassword}
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="password"
                         placeholder="Enter your confirm password"
@@ -206,3 +156,23 @@ let data = {
         },
     ],
 };
+
+/*
+{
+  name: "mr. gray",
+    userType: "customer",
+    email: "gray@gmail.com",
+    number: "7895461230",
+    password: "$2b$12$XjY0awULd6KWNX1aQ3fKGeEv6I2nDbTyeKYlVnY5ZAq.Qho5Y/d8O",
+    age: 23,
+}
+
+ {
+            add: "01",
+            city: "city name",
+            state: "state name",
+            pinCode: "city name",
+  },
+
+
+  */

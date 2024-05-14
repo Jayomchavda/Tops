@@ -5,7 +5,7 @@ export default function PopularCat() {
 
 
 
-    <div class="mt-5 pt-5 pb-5 mb-5">
+    <div className="mt-5 pt-5 pb-5 mb-5">
       <div><i className="text-5xl title italic self-start block text-left mb-5 pb-3">Popular Categories</i></div>
 
 
@@ -40,9 +40,9 @@ export default function PopularCat() {
         </div>
       </div>
 
-      <div class='py-10 flex justify-between items-center '>
-        <i class='text-5xl title font-italic'>Trending Products </i>
-        <a href="#" class="flex items-center inherit-color text-black hover:text-[#bc8b57]">Discover all <img class="ms-1" width="18px" src="/public/arrow-right.svg" alt="" /> </a>
+      <div className='py-10 flex justify-between items-center '>
+        <i className='text-5xl title font-italic'>Trending Products </i>
+        <a href="#" className="flex items-center inherit-color text-black hover:text-[#bc8b57]">Discover all <img className="ms-1" width="18px" src="/public/arrow-right.svg" alt="" /> </a>
       </div>
 
 
