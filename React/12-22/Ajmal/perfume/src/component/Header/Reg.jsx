@@ -22,14 +22,21 @@ export default function Reg() {
     let [address, setAddress] = useState(initialAddress);
 
 
+
     // navigation
     const navigate = useNavigate();
 
     const registerHandler = async () => {
-        // console.log("---->")
+        console.log("User Data:");
         console.log(user);
+
+        console.log("Address Data:");
         console.log(address);
 
+    };
+
+    const handleGenderChange = (e) => {
+        setUser({ ...user, gender: e.target.value }); // Update gender in user state
     };
 
 
@@ -74,7 +81,6 @@ export default function Reg() {
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         onChange={(e) => setUser({ ...user, age: e.target.value })}
-
                         placeholder="Enter your age"
                         id="age"
                     />
@@ -84,7 +90,8 @@ export default function Reg() {
                             <input
                                 type="radio"
                                 value="male"
-                                onChange={(e) => setUser({ ...user, gender: e.target.value })}
+                                checked={user.gender === "male"}
+                                onChange={handleGenderChange}
                                 className="focus:ring-0 mr-2 "
                             />
                             <label htmlFor="">Male*</label>
@@ -92,8 +99,9 @@ export default function Reg() {
                         <div>
                             <input
                                 type="radio"
-                                onChange={(e) => setUser({ ...user, gender: e.target.value })}
                                 value="female"
+                                checked={user.gender === "female"}
+                                onChange={handleGenderChange}
                                 className="focus:ring-0 mr-2 "
                             />
                             <label htmlFor="">Female*</label>
@@ -123,7 +131,6 @@ export default function Reg() {
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         onChange={(e) => setAddress({ ...address, state: e.target.value })}
-
                         placeholder="Enter your state"
                         id="state"
                     />
@@ -132,7 +139,6 @@ export default function Reg() {
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         onChange={(e) => setAddress({ ...address, pinCode: e.target.value })}
-
                         placeholder="Enter your pincode"
                         id="pincode"
                     />
@@ -140,6 +146,7 @@ export default function Reg() {
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="password"
+                        onChange={(e) => setUser({ ...user, password: e.target.value })}
                         placeholder="Enter your password"
                         id="password"
                     />
@@ -147,6 +154,8 @@ export default function Reg() {
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="password"
+                        onChange={(e) => setUser({ ...user, conPassword: e.target.value })}
+
                         placeholder="Enter your confirm password"
                         id="ConPassword"
                     />

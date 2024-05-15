@@ -1,3 +1,4 @@
+import { Button } from 'flowbite-react'
 import React from 'react'
 
 
@@ -22,8 +23,10 @@ export default function Cardcom({ item }) {
                         <p className="text-[15px] mt-2 text-gray-500">{item.brand}</p>
                         <h2 className="text-[22px] mt-1 card-title title single-line-ellipsis">{item.details}</h2>
                         <p className="py-2"> <del className="mr-2  text-gray-500">₹ 1800 </del> <b className="text-[20px]">{item.price}</b></p>
-                        <a className="btn">Buy Now</a>
-                        <a className="btn">Buy Now</a>
+                        <div className='flex  justify-center space-x-4 '>
+                            <Button className="btn">Buy Now</Button>
+                            <Button className="btn">Buy Now</Button>
+                        </div>
                     </div>
                 </ div>
             </div >

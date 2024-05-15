@@ -29,7 +29,6 @@ const Slider = ({ data }) => {
         <div className="w-[1470px] mx-auto">
             {data && <Carousel
                 responsive={responsive}
-                // showDots={false}
                 arrows={true}
                 infinite={false}  >
 

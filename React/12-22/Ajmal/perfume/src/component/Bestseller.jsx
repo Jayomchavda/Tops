@@ -1,3 +1,4 @@
+import { Button } from 'flowbite-react';
 import React from 'react';
 
 export default function Bestseller() {
@@ -29,8 +30,10 @@ export default function Bestseller() {
                                 <p className="text-[13px] mt-2 text-gray-500">100 ML / UNISEX</p>
                                 <h2 className="text-[20px] mt-1 div-title title single-line-ellipsis">Amber Wood Edp 100ml Long Last</h2>
                                 <p className="py-2"> <del className="mr-2  text-gray-500">₹ 1800 </del> <b className="text-[18px]">12600</b></p>
-                                <a className="btn">Buy Now</a>
-                                <a className="btn">Buy Now</a>
+                                <div className='flex  justify-center space-x-4 '>
+                                    <Button className="btn">Buy Now</Button>
+                                    <Button className="btn">Buy Now</Button>
+                                </div>
                             </div>
                         </div >
                     </div >
