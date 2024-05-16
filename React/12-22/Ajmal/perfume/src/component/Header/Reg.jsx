@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 const initialUser = {
     name: "",
     email: "",
@@ -29,6 +27,7 @@ export default function Reg() {
     const registerHandler = async () => {
         console.log("User Data:");
         console.log(user);
+
 
         console.log("Address Data:");
         console.log(address);
@@ -63,16 +62,15 @@ export default function Reg() {
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         onChange={(e) => setUser({ ...user, email: e.target.value })}
-
                         placeholder="Enter your email"
-                        id="email"
+                        id="mail"
                     />
+                    <span id="result" className="text-red-600"></span>
                     <label htmlFor="number">Number*</label>
                     <input
                         className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                         type="text"
                         onChange={(e) => setUser({ ...user, number: e.target.value })}
-
                         placeholder="Enter your number"
                         id="number"
                     />

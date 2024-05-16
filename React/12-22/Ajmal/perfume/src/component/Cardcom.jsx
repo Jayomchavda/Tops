@@ -25,7 +25,7 @@ export default function Cardcom({ item }) {
                         <p className="py-2"> <del className="mr-2  text-gray-500">₹ 1800 </del> <b className="text-[20px]">{item.price}</b></p>
                         <div className='flex  justify-center space-x-4 '>
                             <Button className="btn">Buy Now</Button>
-                            <Button className="btn">Add to Carta</Button>
+                            <Button className="btn">Add to Cart</Button>
                         </div>
                     </div>
                 </ div>
