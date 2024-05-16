@@ -108,6 +108,13 @@ export default function Todo() {
         console.log("New Done Task:", newDoneTask);
     };
 
+    const enterpress = (event) => {
+        if (event.key === "Enter") {
+            addCon();
+            setValue("");
+        }
+    }
+
 
 
 
@@ -129,9 +136,9 @@ export default function Todo() {
         <div className='w-25 mt-3  '>
             <Input
                 onChange={taskEvent}
+                onKeyDown={enterpress}
                 value={task}
                 placeholder='Enter Your Task' />
-
             {
                 updatemode ? <Button onClick={() => addCon()} color='danger' className='mt-2 w-100'>Add</Button>
                     : <Button onClick={() => updateCon()} color='danger' className='mt-2 w-100'>Update</Button>

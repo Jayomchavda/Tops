@@ -49,7 +49,7 @@ export default function Header() {
                             </NavLink>
                             <NavLink to="shop">SHOP</NavLink>
                             <NavLink to="Ourstore">OUR STORES</NavLink>
-                            <NavLink to="#">AJMAL STUDIO</NavLink>
+                            <NavLink to="ajmalstudio">AJMAL STUDIO</NavLink>
                             <NavLink to="#">ABOUT</NavLink>
                         </div>
                     </div>

@@ -57,10 +57,48 @@ export default function () {
                     <div className="flex flex-col">
                         <label htmlFor="citySelect" className='text-left'>City</label>
                         <select id="citySelect" className="w-[50%]">
-                            <option value="All" selected>Please Select City</option>
-                            <option value="Ahmedabad">Ahmedabad</option>
-                            <option value="Rajkot">Rajkot</option>
-                            <option value="Surat">Surat</option>
+                            <option value="ahmedabad">Ahmedabad</option>
+                            <option value="surat">Surat</option>
+                            <option value="vadodara">Vadodara</option>
+                            <option value="rajkot">Rajkot</option>
+                            <option value="bhuj">Bhuj</option>
+                            <option value="anand">Anand</option>
+                            <option value="jamnagar">Jamnagar</option>
+                            <option value="bhavnagar">Bhavnagar</option>
+                            <option value="gandhinagar">Gandhinagar</option>
+                            <option value="junagadh">Junagadh</option>
+                            <option value="porbandar">Porbandar</option>
+                            <option value="anjar">Anjar</option>
+                            <option value="ankleshwar">Ankleshwar</option>
+                            <option value="bardoli">Bardoli</option>
+                            <option value="bharuch">Bharuch</option>
+                            <option value="botad">Botad</option>
+                            <option value="chalisgaon">Chalisgaon</option>
+                            <option value="dahej">Dahej</option>
+                            <option value="dahod">Dahod</option>
+                            <option value="gandhidham">Gandhidham</option>
+                            <option value="godhra">Godhra</option>
+                            <option value="himatnagar">Himatnagar</option>
+                            <option value="kalol">Kalol</option>
+                            <option value="keshod">Keshod</option>
+                            <option value="khambhat">Khambhat</option>
+                            <option value="mahuva">Mahuva</option>
+                            <option value="modasa">Modasa</option>
+                            <option value="morbi">Morbi</option>
+                            <option value="nadiad">Nadiad</option>
+                            <option value="navsari">Navsari</option>
+                            <option value="padra">Padra</option>
+                            <option value="palanpur">Palanpur</option>
+                            <option value="pardi">Pardi</option>
+                            <option value="patan">Patan</option>
+                            <option value="siddhpur">Siddhpur</option>
+                            <option value="sikka">Sikka</option>
+                            <option value="songadh">Songadh</option>
+                            <option value="thane">Thane</option>
+                            <option value="umreth">Umreth</option>
+                            <option value="vapi">Vapi</option>
+                            <option value="valsad">Valsad</option>
+                            <option value="veraval">Veraval</option>
                         </select>
                     </div>
 
