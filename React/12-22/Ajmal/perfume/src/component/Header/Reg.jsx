@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { instanceApi } from "../../Api/axiosconfig";
 
 const initialUser = {
     name: "",
@@ -20,9 +22,10 @@ const initialAddress = {
 };
 
 export default function Reg() {
-    const [user, setUser] = useState(initialUser);
-    const [address, setAddress] = useState(initialAddress);
-    const [errors, setErrors] = useState({});
+    let [user, setUser] = useState(initialUser);
+    let [address, setAddress] = useState(initialAddress);
+    let [errors, setErrors] = useState({});
+    const [cookie, setCookie] = useCookies(["token", "user"]);
 
     const navigate = useNavigate();
 
@@ -30,6 +33,7 @@ export default function Reg() {
         let tempErrors = {};
         const nameFormat = /^[a-zA-Z ]{2,30}$/;
         const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        const addressFormat = /^[a-zA-Z0-9\s,'-]{15,}$/;
         const numberFormat = /^[0-9]{10}$/;
         const ageFormat = /^[0-9]{1,2}$/;
         const pinCodeFormat = /^[0-9]{6}$/;
@@ -54,12 +58,12 @@ export default function Reg() {
             tempErrors.gender = "Please select a gender";
         }
 
-        if (!address.add || address.add.length < 15) {
-            tempErrors.add = "Address must contain at least 15 characters.";
+        if (!address.add || !addressFormat.test(address.add)) {
+            tempErrors.add = "Address must contain at least 15 characters and can include alphanumeric characters, spaces, commas, apostrophes, and hyphens.";
         }
 
         if (!address.city) {
-            tempErrors.city = "City is required.";
+            tempErrors.city = "Enter your city name.";
         }
 
         if (!address.state) {
@@ -79,16 +83,31 @@ export default function Reg() {
         return Object.keys(tempErrors).length === 0;
     };
 
+
+
+
     const registerHandler = async () => {
         if (validateForm()) {
-            console.log("User Data:", user);
-            console.log("Address Data:", address);
             toast.success("Registration successful!");
-            navigate("/"); // Navigate to home or any other page after successful registration
+            navigate("/");
         } else {
-            toast.error("Please fix the errors in the form.");
-        }
-    };
+            let mainData = {
+                ...user,
+                address: [address],
+            };
+            try {
+                let data = await instanceApi.post("/user/signup", mainData);
+                console.log("---->", data.data.data);
+                console.log("---->", data.data.token);
+                setCookie("user", data.data.data);
+                setCookie("token", data.data.token);
+                navigate("/");
+            } catch (error) {
+                console.log("errror", error);
+                toast.error("Somthing went wrong");
+            }
+        };
+    }
 
     const handleGenderChange = (e) => {
         setUser({ ...user, gender: e.target.value });
@@ -168,6 +187,7 @@ export default function Reg() {
                 <input
                     className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                     type="text"
+                    value={address.add} // Ensure the value is correctly set
                     onChange={(e) => setAddress({ ...address, add: e.target.value })}
                     placeholder="Enter your address"
                     id="add"
@@ -176,6 +196,7 @@ export default function Reg() {
                 <input
                     className="rounded-md mb-3 mt-2 w-full border-none bg-[#e6e7e8] focus:!ring-red-600 focus:ring-1"
                     type="text"
+                    value={address.city} // Ensure the value is correctly set
                     onChange={(e) => setAddress({ ...address, city: e.target.value })}
                     placeholder="Enter your city"
                     id="city"
