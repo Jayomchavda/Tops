@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from "../../../public/ajmallogo.svg";
 import { Navbar, NavbarBrand, NavbarCollapse } from "flowbite-react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -11,15 +11,26 @@ import { useCookies } from "react-cookie";
 export default function Header() {
     const navigate = useNavigate();
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    // const [cookie, setCookie] = useCookies(["token"]);
 
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
     };
 
-    let [cookie, setCookie] = useCookies(["token"]);
-    console.log("-----------  cookie----------->", cookie);
+    let [cookie, setCookie] = useCookies(["token", "user"]);
+    console.log("-----------  cookie----------->", cookie?.user?.userType);
 
+    console.log("Cookie:", cookie);
+    console.log("User Type:", cookie?.user?.userType);
 
+    // useEffect(() => {
+    //     console.log("Cookies:", cookie);
+    //     if (cookie.user) {
+    //         console.log("User Type:", cookie?.user?.userType);
+    //     } else {
+    //         console.log("User is not logged in or user object is missing.");
+    //     }
+    // }, [cookie]);
 
 
     return (
@@ -30,7 +41,6 @@ export default function Header() {
                     <Link to="/">
                         <img src={logo} className="mr-3 h-[70px]" alt="Flowbite React Logo" />
                     </Link>
-
                 </NavbarBrand>
 
                 <NavbarCollapse>
@@ -44,16 +54,28 @@ export default function Header() {
                             <Search className="text-gray-400 rounded-r-3xl" />
                         </div>
                         <div className="flex justify-between [&_*]:font-bold [&_*]:text-gray-500 ">
-                            <NavLink to="" >
-                                HOME
-                            </NavLink>
-                            <NavLink to="shop">SHOP</NavLink>
-                            <NavLink to="Ourstore">OUR STORES</NavLink>
-                            <NavLink to="ajmalstudio">AJMAL STUDIO</NavLink>
-                            <NavLink to="#">ABOUT</NavLink>
+
+                            {cookie?.user?.userType === "admin" ? (
+                                <div className='flex gap-40 '>
+                                    <NavLink to="/admin-product">PRODUCT</NavLink>
+                                    <NavLink to="/admin-user">USER</NavLink>
+                                    <NavLink to="/admin-order">ORDER</NavLink>
+                                </div>
+                            ) : (
+                                <>
+                                    <NavLink to="/">HOME</NavLink>
+                                    <NavLink to="/shop">SHOP</NavLink>
+                                    <NavLink to="/Ourstore">OUR STORES</NavLink>
+                                    <NavLink to="/ajmalstudio">AJMAL STUDIO</NavLink>
+                                    <NavLink to="#">ABOUT</NavLink>
+
+                                </>
+                            )}
+
                         </div>
+
                     </div>
-                </NavbarCollapse>
+                </NavbarCollapse >
                 <div className="flex items-center [&_*]:mr-5 text-gray-400">
                     {cookie?.token ? (
 
@@ -63,14 +85,20 @@ export default function Header() {
                     ) : (
                         <LogIn onClick={() => navigate("/login")} />
                     )}
-                    <ShoppingCart role='button' />
-                    <Heart role='button' onClick={toggleSidebar} />
+
+                    {cookie?.user?.userType !== "admin" && (
+                        <>
+                            <ShoppingCart role='button' />
+                            <Heart role='button' onClick={toggleSidebar} />
+                        </>
+                    )}
                 </div>
-            </Navbar>
+            </Navbar >
 
             {/* Sidebar */}
 
-            <div className={`fixed inset-y-0 right-0 w-80 bg-slate-100 text-balck transition-transform duration-300 transform ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ zIndex: 5555, top: 119 }}>
+            <div div className={`fixed inset-y-0 right-0 w-80 bg-slate-100 text-balck transition-transform duration-300 transform ${sidebarOpen ? 'translate-x-0' : 'translate-x-full'}`
+            } style={{ zIndex: 5555, top: 119 }}>
                 <div className="p-4 flex justify-center items-center gap-3 ">
                     <Heart />
                     <h2 className='text-[23px] title'>My Wishlist</h2>
@@ -82,7 +110,7 @@ export default function Header() {
                 <div className="overflow-y-auto max-h-96">
                     a
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }

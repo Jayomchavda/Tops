@@ -3,13 +3,13 @@ import React from 'react'
 import data from "../data.json"
 import data2 from "../datatwo.json"
 import data3 from "../datathree.json"
-import Footer from "./Footer"
-import Arrivals from '../Arrivals';
+import Arrivals from '../../Ui/pages/Arrivals';
 import Slider from '../Slider';
-import Bestseller from '../Bestseller';
-import PopularCat from '../PopularCat'
-import Heroimgslider from '../Heroimgslider'
-import Instatitle from './Instatitle'
+import Bestseller from '../../Ui/pages/Bestseller';
+import PopularCat from '../../Ui/pages/PopularCat'
+import Heroimgslider from '../../Ui/pages/Heroimgslider'
+import Instatitle from '../../Ui/pages/Instatitle'
+import Footer from '../Footer/Footer';
 
 
 export default function Home() {

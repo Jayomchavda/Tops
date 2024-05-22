@@ -7,7 +7,10 @@ import Login from '../component/Header/Login'
 import Reg from '../component/Header/Reg'
 import Profile from '../component/Header/Profile'
 import Ourstore from '../component/Header/Ourstore'
-import AjmalStudio from '../component/Header/AjmalStudio'
+import AjmalStudio from '../Ui/pages/AjmalStudio'
+import Order from '../Admin/Order/Order'
+import Product from '../Admin/Product/Product'
+import User from '../Admin/User/User'
 
 
 export default function Router() {
@@ -23,7 +26,14 @@ export default function Router() {
                     <Route path='/register' element={<Reg />} />
                     <Route path='/profile' element={<Profile />} />
                     <Route path='/ajmalstudio' element={<AjmalStudio />} />
+
+                    {/* ----------- admin page ---------- */}
+                    <Route path="/admin-product" element={<Product />} />
+                    <Route path="/admin-user" element={<User />} />
+                    <Route path="/admin-order" element={<Order />} />
                 </Routes>
+
+
             </BrowserRouter>
         </div>
     )

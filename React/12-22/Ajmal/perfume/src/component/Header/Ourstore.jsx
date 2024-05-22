@@ -1,10 +1,10 @@
 import { Button, Carousel } from 'flowbite-react'
 import React from 'react'
+import Footer from '../Footer/Footer'
 
 export default function () {
     return (
         <>
-
             <div className='my-4'>
                 <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 mx-14">
                     <Carousel leftControl="<" rightControl=">">
@@ -107,15 +107,6 @@ export default function () {
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
             <div className='my-8'>
                 <h2 className='text-[35px] font-bold'>Ajmal Perfumes Stores</h2>
                 <hr className='w-[10%] mx-auto border-gray-950  mb-5' />

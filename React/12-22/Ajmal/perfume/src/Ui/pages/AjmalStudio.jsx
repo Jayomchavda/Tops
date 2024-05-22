@@ -1,6 +1,6 @@
 import React from 'react'
 import { Carousel } from "flowbite-react";
-import Footer from './Footer';
+import Footer from '../../component/Footer/Footer';
 
 export default function AjmalStudio() {
     return (

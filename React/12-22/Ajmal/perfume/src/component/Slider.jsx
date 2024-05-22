@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css'; // Import default carousel styles
-import Cardcom from './Cardcom';
+import Cardcom from '../Ui/pages/Cardcom';
 
 // import data from "./data.json"
 

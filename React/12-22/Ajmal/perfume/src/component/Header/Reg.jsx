@@ -83,9 +83,6 @@ export default function Reg() {
         return Object.keys(tempErrors).length === 0;
     };
 
-
-
-
     const registerHandler = async () => {
         if (validateForm()) {
             toast.success("Registration successful!");
