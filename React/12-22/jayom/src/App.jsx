@@ -23,6 +23,10 @@ import SimpleRouter from './13.Router/SimpleRouter/SimpleRouter.jsx';
 import Main from './13.Router/Task1/Main.jsx';
 import Todo from './0.Task/Todo.jsx';
 import ChechboxTask from './0.Task/ChechboxTask.jsx';
+import Crud from './0.Task/05-06-2024/Crud.jsx';
+import Newcrud from './0.Task/06-06-2024/Newcrud.jsx';
+import UseReducer from './14.UseReducer/UseReducer.jsx';
+import UseContaxt from './15.UseContaxt/UseContaxt.jsx';
 
 
 
@@ -81,11 +85,20 @@ export default function App() {
       {/* <SimpleRouter /> */}
       {/* <Main /> */}
 
+
+      {/* ===================== 14. UseReducer   ==================== */}
+      {/* <UseReducer /> */}
+
+      {/* ===================== 15. UseContaxt   ==================== */}
+      <UseContaxt />
+
+
+
       {/* =====================  0. Task  ==================== */}
-
-      <Todo />
+      {/* <Todo /> */}
       {/* <ChechboxTask /> */}
-
+      {/* <Crud /> */}
+      {/* <Newcrud /> */}
 
 
 

@@ -137,10 +137,6 @@ export default function Form3() {
                         </Label>
                     </FormGroup>
 
-
-
-
-
                     <Button onClick={(e) => submitHandler(e)} color='danger' className='w-100'>
                         Submit
                     </Button>
@@ -202,7 +198,7 @@ export default function Form3() {
                                         </td>
 
 
-                                        <Trash role='button' onClick={() => deleteHandler(i)} size={40} color='red' />
+                                        <Trash role='button' onClick={() => deleteHandler(index)} size={40} color='red' />
                                     </tr>
                                 )
                             })
