@@ -10,7 +10,7 @@ export default function UseContaxt() {
     const age = 20;
     return (
         <div>
-            <UserContext.Provider value={{ age: age }}>
+            <UserContext.Provider value={{ age, task, setTask }}>
                 <ComA1 name={name} />
                 <ComB1 />
             </UserContext.Provider>
