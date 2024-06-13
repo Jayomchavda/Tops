@@ -27,6 +27,7 @@ import Crud from './0.Task/05-06-2024/Crud.jsx';
 import Newcrud from './0.Task/06-06-2024/Newcrud.jsx';
 import UseReducer from './14.UseReducer/UseReducer.jsx';
 import UseContaxt from './15.UseContaxt/UseContaxt.jsx';
+import ReduxMain from './16.Redux/ReduxMain.jsx';
 
 
 
@@ -90,7 +91,11 @@ export default function App() {
       {/* <UseReducer /> */}
 
       {/* ===================== 15. UseContaxt   ==================== */}
-      <UseContaxt />
+      {/* <UseContaxt /> */}
+
+      {/* ===================== 16.Redux  ==================== */}
+      <ReduxMain />
+
 
 
 
