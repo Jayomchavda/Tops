@@ -7,9 +7,19 @@ let countSlice = createSlice({
         incrementCount: (state, action) => {
             console.log("-=-=-=->");
             state.count++;
+        },
+
+        incByValue: (state, action) => {
+            state.count = state.count + +action.payload;
         }
+    },
+
+    extraReducers: (builder) => {
+        builder.addCase("user/adduser", (state, action) => {
+            state.count++;
+        })
     }
 });
 
 export default countSlice.reducer;
-export const { incrementCount } = countSlice.actions;
+export const { incrementCount, incByValue } = countSlice.actions;
