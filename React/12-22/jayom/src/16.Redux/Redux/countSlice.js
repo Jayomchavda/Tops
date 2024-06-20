@@ -2,23 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let countSlice = createSlice({
     name: "count",
-    initialState: { count: 50 },
+    initialState: { count: 10 },
     reducers: {
         incrementCount: (state, action) => {
-            console.log("-=-=-=->");
             state.count++;
         },
 
         incByValue: (state, action) => {
             state.count = state.count + +action.payload;
-        }
+        },
     },
 
     extraReducers: (builder) => {
-        builder.addCase("user/adduser", (state, action) => {
+        builder.addCase("user/addUser", (state, action) => {
             state.count++;
-        })
-    }
+        });
+    },
 });
 
 export default countSlice.reducer;

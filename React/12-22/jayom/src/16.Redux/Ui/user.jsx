@@ -1,53 +1,49 @@
-// import React from 'react'
-// import { useDispatch } from 'react-redux'
-// import { Button } from 'reactstrap';
-// import { addUser } from '../Redux/user';
-
-// export default function user() {
-
-//     const dispatch = useDispatch();
-//     return (
-//         <div>
-//             <Button onClick={() => dispatch(addUser)}>Add</Button>
-//         </div>
-//     )
-// }
-
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../Redux/user";
+import { addUser, deleteUser } from "../Redux/user";
+import { Button } from "reactstrap";
 
 export default function User() {
-    let [name, setName] = useState();
+    let [name, setName] = useState("");
+    let [index, setIndex] = useState()
+
     const dispatch = useDispatch();
 
     const data = useSelector((store) => {
         return store.userSlice;
     });
 
+
     const addUserHandler = () => {
         dispatch(addUser(name));
         setName("");
     };
+
+    const deleteHandler = (index) => {
+        dispatch(deleteUser(index));
+        setIndex("");
+    }
+
     return (
         <div>
+            <hr />
             <input
                 value={name}
                 type="text"
                 className="border px-2 py-1"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e?.target?.value)}
             />
-            <button className="border px-2 py-1" onClick={() => addUserHandler()}>
+            <Button className="border px-2 py-1" onClick={() => addUserHandler()}>
                 Add
-            </button>
+            </Button>
 
-            <hr />
 
             <ul>
-                {data?.user.map?.((e, i) => {
+                {data?.user?.map?.((e, i) => {
+                    console.log("e", e)
                     return (
                         <div key={i}>
-                            <li>{e}</li>
+                            <li>{e} <Button onClick={() => deleteHandler(i)} >Delete</Button></li>
                         </div>
                     );
                 })}
