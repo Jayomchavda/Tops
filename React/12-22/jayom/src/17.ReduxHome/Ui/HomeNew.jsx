@@ -22,11 +22,13 @@ export default function HomeNew() {
     };
 
 
+
+
     return (
         <div>
             <h1>City Count is: {data?.newCount}</h1>
 
-            <Button onClick={() => addUserHandler()}>Inc</Button>
+            <Button onClick={() => addUserHandler()}>Add Count</Button>
             <hr />
 
 
