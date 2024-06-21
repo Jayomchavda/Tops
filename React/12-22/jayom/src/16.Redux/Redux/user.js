@@ -8,12 +8,18 @@ const userSlice = createSlice({
             state.user.push(action.payload);
         },
         deleteUser: (state, action) => {
-
-            // state.user.splice(action.payload);
             state.user = state.user.filter((_, index) => index !== action.payload)
+        },
+        editUser: (state, action) => {
+            const { index, newName } = action.payload;
+            if (index >= 0 && index < state.user.length) {
+                state.user[index] = newName;
+            }
         }
+
+
     },
 });
 
 export default userSlice.reducer;
-export const { addUser, deleteUser } = userSlice.actions;
+export const { addUser, deleteUser, editUser } = userSlice.actions;

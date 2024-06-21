@@ -6,9 +6,12 @@ const citySlice = createSlice({
     reducers: {
         addCity: (state, action) => {
             state.City.push(action.payload);
-        }
+        },
+        deleteCity: (state, action) => {
+            state.City = state.City.filter((_, index) => index !== action.payload)
+        },
     }
 })
 
 export default citySlice.reducer;
-export const { addCity } = citySlice.actions;
+export const { addCity, deleteCity } = citySlice.actions;

@@ -5,7 +5,6 @@ import { Button } from "reactstrap";
 
 export default function User() {
     let [name, setName] = useState("");
-    let [index, setIndex] = useState()
 
     const dispatch = useDispatch();
 
@@ -19,9 +18,8 @@ export default function User() {
         setName("");
     };
 
-    const deleteHandler = (index) => {
-        dispatch(deleteUser(index));
-        setIndex("");
+    const deleteHandler = (i) => {
+        dispatch(deleteUser(i));
     }
 
     return (
@@ -38,12 +36,15 @@ export default function User() {
             </Button>
 
 
+
             <ul>
                 {data?.user?.map?.((e, i) => {
                     console.log("e", e)
                     return (
                         <div key={i}>
-                            <li>{e} <Button onClick={() => deleteHandler(i)} >Delete</Button></li>
+                            <li>{e} <Button onClick={() => deleteHandler(i)} >Delete</Button>
+                                <Button>Edit </Button>
+                            </li>
                         </div>
                     );
                 })}

@@ -95,11 +95,11 @@ export default function App() {
       {/* <UseContaxt /> */}
 
       {/* ===================== 16.Redux  ==================== */}
-      <ReduxMain />
+      {/* <ReduxMain /> */}
 
       {/* ===================== 17.ReduxHome  ==================== */}
 
-      {/* <NewReduxMain /> */}
+      <NewReduxMain />
 
 
       {/* =====================  0. Task  ==================== */}
