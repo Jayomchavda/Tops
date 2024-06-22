@@ -10,12 +10,13 @@ const citySlice = createSlice({
         deleteCity: (state, action) => {
             state.City = state.City.filter((_, index) => index !== action.payload)
         },
-        editCity: (state, action) => {
+        updateCity: (state, action) => {
             const { index, newName } = action.payload;
             state.City[index] = newName;
         },
     }
-})
+});
+
 
 export default citySlice.reducer;
-export const { addCity, deleteCity, editCity } = citySlice.actions;
+export const { addCity, deleteCity, updateCity } = citySlice.actions;

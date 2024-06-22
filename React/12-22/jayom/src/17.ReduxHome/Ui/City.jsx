@@ -1,59 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'reactstrap';
-import { addCity, deleteCity, editCity } from '../Redux/City';
+import { addCity, deleteCity, updateCity } from '../Redux/City';
 
 export default function City() {
-    let [city, setCity] = useState("");
-    let [index, setIndex] = useState("")
-    let [cityArr, setCityArr] = useState([])
-
+    const [city, setCity] = useState("");
     const [editIndex, setEditIndex] = useState(null);
 
-
     const dispatch = useDispatch();
-
-    const data = useSelector((store) => {
-        return store.citySlice
-    });
-    // console.log("alldata", data);
+    const data = useSelector((store) => store.citySlice);
 
     const addHandler = () => {
-        dispatch(addCity(city))
-        setCity("");
-    }
-
+        if (city.trim() !== "") {
+            dispatch(addCity(city));
+            setCity("");
+        }
+    };
 
     const deleteHandler = (i) => {
         dispatch(deleteCity(i));
         setCity("");
-    }
+    };
 
-    const editHandler = () => {
-        setCity(data.City);
-        console.log("dataa", data);
-    }
-    // const updateHandler = (i) => {
-    //     dispatch(editCity({ index: i, newName: city }));
-    //     setCity("");
-    // }
+    const editHandler = (name, index) => {
+        setCity(name);
+        setEditIndex(index);
+    };
 
-
-    // const updateHandler = (i) => {
-    //     let newData = cityArr.map((e, i) => {
-    //         if (i === index) {
-    //             return city
-    //         } else {
-    //             return e
-    //         }
-    //     })
-    //     setCityArr(newData);
-    // }
-
-
-
-
-
+    const updateHandler = () => {
+        if (city.trim() !== "") {
+            if (editIndex !== null) {
+                dispatch(updateCity({ index: editIndex, newName: city }));
+                setEditIndex(null);
+            }
+            setCity("");
+        }
+    };
 
 
 
@@ -62,28 +44,27 @@ export default function City() {
             <input
                 value={city}
                 type="text"
-                onChange={(e) => setCity(e?.target?.value)}
+                onChange={(e) => setCity(e.target.value)}
             />
 
-            <Button onClick={() => addHandler()}>Add City</Button>
-
+            {editIndex !== null ? (
+                <Button color="success" onClick={updateHandler}>
+                    Update City
+                </Button>
+            ) : (
+                <Button onClick={addHandler}>Add City</Button>
+            )}
             <ul>
-                {data?.City?.map?.((e, i) => {
-                    // console.log("e", e)
-                    return (
-                        <div key={i} >
-                            <li className=''>{e}
-                                <Button onClick={() => editHandler()}>Edit </Button>
-                                <Button color='danger' onClick={() => deleteHandler(i)}>Delete</Button>
-                                <Button color="success" onClick={() => updateHandler()}>Update </Button>
-
-                            </li>
-                        </div>
-                    )
-                })
-                }
+                {data?.City?.map((e, i) => (
+                    <div key={i}>
+                        <li>
+                            {e}
+                            <Button onClick={() => editHandler(e, i)}>Edit</Button>
+                            <Button color="danger" onClick={() => deleteHandler(i)}>Delete</Button>
+                        </li>
+                    </div>
+                ))}
             </ul>
-
         </div>
-    )
+    );
 }
