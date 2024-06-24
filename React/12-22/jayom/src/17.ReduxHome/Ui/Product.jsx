@@ -25,10 +25,9 @@ export default function Product() {
 
         <div>
             {/* <Button onClick={() => dispatch(fetchProduct())}>Call API</Button> */}
-
+            <h1>hello</h1>
             {
                 data.pending ? (<h1>Loading...</h1>) : (
-
 
                     <Table striped>
                         <thead>
